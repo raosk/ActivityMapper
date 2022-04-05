@@ -1,0 +1,1 @@
+Here be the large images for the Activity pop-ups.

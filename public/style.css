@@ -1,0 +1,41 @@
+/* Common */
+body {
+    background-color: rgb(187, 162, 132);
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* MainView and top bars */
+h1 {
+    font-size: 70px;
+    color:rgb(17, 14, 17)
+}
+
+/* Preview Boxes */
+.preview_box_container {
+    background-color: rgb(235, 224, 132);
+    padding: 10px;
+    
+}
+.preview_box {
+    background-color: rgb(132, 182, 190);
+    margin: 10px 10px 10px 10px;
+    padding: 1px;
+}
+
+
+/* Pop-up Base and Pop-ups' buttons */
+.popUpBase {
+    background-color: rgb(219, 226, 185);
+}
+
+/* Activity pop-ups */
+
+/* Search pop-ups */
+
+/* Create pop-ups */
+
+/* Login & Register pop-ups */
+
+/* Settings pop-ups */
+
