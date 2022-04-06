@@ -24,7 +24,7 @@ function previewBoxesMain() {
             </div>
         `
         if (dummyData[i].dateStart == dummyData[i].dateEnd){
-            document.getElementById("preview_box").childNodes[1].innerHTML = 
+            document.querySelectorAll("preview_box")[i].childNodes[1].innerHTML = 
             `
                 <p> Time: ${dummyData[i].dateStart}</p>
             `
