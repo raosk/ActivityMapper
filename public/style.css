@@ -1,8 +1,11 @@
 /* Common */
 body {
     background-color: #bebebe;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: xx-large;
+    margin-right: 0;
 }
+
 
 /* MainView and top bars */
 h1 {
@@ -17,31 +20,44 @@ h1 {
 .activity_preview_box_image {
     width: 100%;
     object-fit: cover;
+    margin-left: 0;
+}
+.activity_preview_box_image_container {
+    position: relative;
 }
 .preview_box {
     background-color: white;
     color: black;
     padding-bottom: 2;
+    width: 94%;
+    padding: 0.3rem;
+    padding-left: 1.5rem;
+    margin-top: 0;
 }
 hr{
-    position: absolute;
+    position: relative;
     left: 0;
-    bottom: 0;
+    bottom: 1rem;
 }
 
 .activity_preview_box_title, .activity_preview_box_description{
     padding-bottom: 0.75rem;
     color: white;
     position: absolute;
+    margin-left: 0.5rem;
 }
 
 .activity_preview_box_title{
-    bottom: 0;
-    right: 2rem;
+    bottom: 6rem;
 }
 .activity_preview_box_description{
     bottom: 0;
-    right: 2rem;
+    font-size: 1.6rem;
+    margin-bottom: 0;
+}
+.activity_preview_box_area, .activity_preview_box_time{
+    color: black;
+    font-size: 1.2rem;
 }
 
 /* Pop-up Base and Pop-ups' buttons */
