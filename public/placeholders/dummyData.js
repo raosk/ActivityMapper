@@ -40,7 +40,7 @@ let dummyData = [
     },
     {
         "activityId": 4,
-        "title": "Rock Jam at Toimitalo",
+        "title": "Rock Jam",
         "description": "Morbi sollicitudin lacinia orci, et commodo elit tristique quis. Aliquam pulvinar lacinia semper. Vivamus nec libero vitae erat efficitur ultricies. Sed dignissim vestibulum odio, eget molestie mi. Mauris sit amet augue gravida, posuere mi et, semper neque. Maecenas ultricies neque a mattis eleifend. Cras tristique est odio, in interdum est tempus ac. Morbi ut interdum erat. Donec lobortis tincidunt mi, in fermentum massa consectetur et. Nullam vitae neque vestibulum, ultrices nunc id, varius risus. Integer venenatis iaculis sagittis. Pellentesque pellentesque, velit non ultricies tincidunt, velit tortor sagittis sapien, a feugiat est urna quis turpis. Curabitur consequat sodales vestibulum. Vivamus eget ultricies urna. Sed vel gravida massa. Phasellus ipsum diam, pulvinar nec magna in, tincidunt tempor quam.",
         "area": "Rovaniemi",
         "location": "Toimitalo, hatustavetokatu 27",

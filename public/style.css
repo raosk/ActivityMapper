@@ -1,7 +1,7 @@
 /* Common */
 body {
     background-color: #bebebe;
-    font-family: Verdana, Geneva, sans-serif;
+    font-family: 'Segoe UI','Corbel', Verdana, Geneva, sans-serif;
     font-size: xx-large;
     margin-right: 0;
     width: 100%;
@@ -37,9 +37,10 @@ h1 {
     padding-bottom: 2;
     width:100%;
     padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0rem;
     padding-left: 0;
     margin-top: 0;
+    bottom: 0;
 }
 hr{
     position: relative;
@@ -57,20 +58,30 @@ hr{
 }
 
 .activity_preview_box_title{
-    bottom: 6rem;
+    bottom: 0.5rem;
+    font-size: xx-large;
 }
 .activity_preview_box_description{
-    bottom: 0.5rem;
+    bottom: 0rem;
     font-size: 1.6rem;
     margin-bottom: 0;
-    padding-bottom: 0;
+    padding-bottom: 0.5rem;
+    margin-top: 2.5rem;
+    font-size: large;
+
+}
+.preview_br{
+    font-size: 10rem;
 }
 .activity_preview_box_area, .activity_preview_box_time{
     color: black;
     font-size: 1.2rem;
     padding-left: 0.5rem;
+    margin-top: 0.5rem;
 }
-
+.activity_preview_box_area{
+    margin-bottom: 0;
+}
 /* Pop-up Base and Pop-ups' buttons */
 .popUpBase {
     background-color: rgb(219, 226, 185);
