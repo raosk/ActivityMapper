@@ -25,15 +25,41 @@ function previewBoxesMain() {
                 <hr size = "4" width = "100%" color = "black">
             </div>
         `
+    
+        //if today ...
+        
+        document.getElementById("previewsTarget").appendChild(previewBox)
+    }
+}
+
+function checkDate() {
+    for (let i = 0; i < dummyData.length; i++) {
         if (dummyData[i].dateStart == dummyData[i].dateEnd){
-            document.querySelector("preview_box")[i].innerText = 
+            let previewBox = document.querySelectorAll(".preview_box")[i];
+            document.querySelectorAll(".preview_box_container")[i].removeChild(previewBox)
+            previewBox.innerHTML = 
             `
             <p class="activity_preview_box_area"> Area: ${dummyData[i].area}</p>
             <p class="activity_preview_box_time"> Time: ${dummyData[i].dateStart}</p>
-            `
+            `;
+            document.querySelectorAll(".preview_box_container")[i].appendChild(previewBox);                    
         }
-        
-        document.getElementById("previewsTarget").appendChild(previewBox)
+        let today = new Date();
+        let day = String(today.getDate()).padStart(2, '0');
+        let month = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let year = today.getFullYear();
+
+        today = day + '.' + month + '.' + year;
+        if (dummyData[i].dateStart == dummyData[i].dateEnd && dummyData[i].dateStart == today){
+            let previewBox = document.querySelectorAll(".preview_box")[i];
+            document.querySelectorAll(".preview_box_container")[i].removeChild(previewBox)
+            previewBox.innerHTML = 
+            `
+            <p class="activity_preview_box_area"> Area: ${dummyData[i].area}</p>
+            <p class="activity_preview_box_time"> Time: Today</p>
+            `;
+            document.querySelectorAll(".preview_box_container")[i].appendChild(previewBox);
+        }  
     }
 }
 /* 

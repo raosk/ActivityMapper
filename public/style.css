@@ -18,29 +18,35 @@ h1 {
 
 /* Preview Boxes */
 .preview_box_container {
-    width: 90%;
+    width: 100%;
+    margin: 0;
 }
 .activity_preview_box_image {
     width: 100%;
     object-fit: cover;
     margin-left: 0;
+    height:15rem;
 }
 .activity_preview_box_image_container {
     position: relative;
+    height: 15rem;
 }
 .preview_box {
     background-color: white;
     color: black;
     padding-bottom: 2;
     width:100%;
-    padding: 0.3rem;
-    padding-left: 1.5rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0;
     margin-top: 0;
 }
 hr{
     position: relative;
     left: 0;
-    bottom: 1rem;
+    bottom: 0rem;
+    width: 99.5%;
+    margin: 0;
 }
 
 .activity_preview_box_title, .activity_preview_box_description{
@@ -54,13 +60,15 @@ hr{
     bottom: 6rem;
 }
 .activity_preview_box_description{
-    bottom: 0;
+    bottom: 0.5rem;
     font-size: 1.6rem;
     margin-bottom: 0;
+    padding-bottom: 0;
 }
 .activity_preview_box_area, .activity_preview_box_time{
     color: black;
     font-size: 1.2rem;
+    padding-left: 0.5rem;
 }
 
 /* Pop-up Base and Pop-ups' buttons */
