@@ -18,8 +18,7 @@ function mainView() {
         <p>New Upcoming Popular Past</p>
     </div>
     `
-    previewBoxesMain();
-    checkDate();     // This will call in the preview boxes
+    previewBoxesMain(); // This will call in the preview boxes
 }
 
 function resultsView() {
