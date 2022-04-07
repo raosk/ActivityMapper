@@ -4,18 +4,21 @@ body {
     font-family: Verdana, Geneva, sans-serif;
     font-size: xx-large;
     margin-right: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 
 /* MainView and top bars */
 h1 {
-    font-size: 70px;
+    font-size: 40px;
     color:rgb(17, 14, 17)
 }
 
 /* Preview Boxes */
 .preview_box_container {
-    width: 100%;
+    width: 90%;
 }
 .activity_preview_box_image {
     width: 100%;
@@ -29,7 +32,7 @@ h1 {
     background-color: white;
     color: black;
     padding-bottom: 2;
-    width: 94%;
+    width:100%;
     padding: 0.3rem;
     padding-left: 1.5rem;
     margin-top: 0;
@@ -63,6 +66,9 @@ hr{
 /* Pop-up Base and Pop-ups' buttons */
 .popUpBase {
     background-color: rgb(219, 226, 185);
+}
+#mainTarget{
+    width: 100%;
 }
 
 /* Activity pop-ups */

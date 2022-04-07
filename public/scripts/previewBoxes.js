@@ -26,7 +26,7 @@ function previewBoxesMain() {
             </div>
         `
         if (dummyData[i].dateStart == dummyData[i].dateEnd){
-            document.querySelectorAll("preview_box")[i].innerHTML = 
+            document.querySelector("preview_box")[i].innerText = 
             `
             <p class="activity_preview_box_area"> Area: ${dummyData[i].area}</p>
             <p class="activity_preview_box_time"> Time: ${dummyData[i].dateStart}</p>
