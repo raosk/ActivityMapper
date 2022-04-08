@@ -19,7 +19,7 @@ function SearchPopUp() {
     <div class="pop_up_search_base">
         <h2>Search</h2>
         <button onclick="">Clear Search</button>  
-        <button onclick="resultsView(); closePopUp();">Search</button>  
+        <button onclick="resultsView();closePopUp();">Search</button>  
     </div>
     `
 }
