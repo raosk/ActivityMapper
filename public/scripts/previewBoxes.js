@@ -7,7 +7,6 @@ if (screenWidth > 900){
 
 
 function previewBoxesMain() {
-    let imageAddress = "";
     let displayedText = "";
     for (let i = 0; i < dummyData.length; i++) {
         if (dummyData[i].description.length > characterAmount){
@@ -19,7 +18,8 @@ function previewBoxesMain() {
         
         let base = "/images/preview/";
         let images = [base+"arts.jpg", base+"crafts.jpeg", base+"culture.png", base+"food.png", base+"learning.jpg", base+"music.png", base+"nature.webp", base+"party.jpeg", base+"sport.jpg", base+"other.jpg"];
-    
+        images = images.reverse();
+        console.log(images);
         for(let k = 0; k < dummyData[i].category.length; k++){ 
             for(let j = 0; j < images.length; j++){ 
                 if(dummyData[i].category[k].includes(images[j].substring(16,20))){
