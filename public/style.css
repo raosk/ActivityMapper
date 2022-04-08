@@ -12,48 +12,90 @@ body {
     background-color: #bebebe;
     font-family: 'Courier New', Courier, monospace;
     overflow: auto;
+    font-size: xx-large;
+    margin-right: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
+
 
 /* MainView and top bars */
 h1 {
-    font-size: 70px;
+    font-size: 40px;
     color:rgb(17, 14, 17)
 }
+#mainTarget{
+    width: 100%;
+}
+
 
 /* Preview Boxes */
 .preview_box_container {
     width: 100%;
+    margin: 0;
 }
 .activity_preview_box_image {
     width: 100%;
     object-fit: cover;
+    margin-left: 0;
+    height:15rem;
+}
+.activity_preview_box_image_container {
+    position: relative;
+    height: 15rem;
 }
 .preview_box {
     background-color: white;
     color: black;
     padding-bottom: 2;
+    width:100%;
+    padding-top: 0.3rem;
+    padding-bottom: 0rem;
+    padding-left: 0;
+    margin-top: 0;
+    bottom: 0;
 }
 hr{
-    position: absolute;
+    position: relative;
     left: 0;
-    bottom: 0;
+    bottom: 0rem;
+    width: auto;
+    margin: 0;
 }
 
 .activity_preview_box_title, .activity_preview_box_description{
     padding-bottom: 0.75rem;
     color: white;
     position: absolute;
+    margin-left: 0.5rem;
 }
 
 .activity_preview_box_title{
-    bottom: 0;
-    right: 2rem;
+    bottom: 0.5rem;
+    font-size: xx-large;
 }
 .activity_preview_box_description{
-    bottom: 0;
-    right: 2rem;
+    bottom: 0rem;
+    font-size: 1.6rem;
+    margin-bottom: 0;
+    padding-bottom: 0.5rem;
+    margin-top: 2.5rem;
+    font-size: large;
 }
 
+.preview_br{
+    font-size: 10rem;
+}
+.activity_preview_box_area, .activity_preview_box_time{
+    color: black;
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+.activity_preview_box_area{
+    margin-bottom: 0;
+}
 /* Pop-up Base and Pop-ups' buttons 
 basics, styling still needed*/
 #pop_up_base {
