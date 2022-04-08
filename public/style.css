@@ -1,7 +1,17 @@
+/* Root for color variables, not final */
+:root {
+    --primary-color: rgb(108, 105, 200);
+    --secondary-color: #f7f1a2;
+    --thirdary-color: #ff967a;
+    --black-color: #343642;
+    --white-color: white;
+}
+
 /* Common */
 body {
     background-color: #bebebe;
-    font-family: 'Segoe UI','Corbel', Verdana, Geneva, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: auto;
     font-size: xx-large;
     margin-right: 0;
     width: 100%;
@@ -15,6 +25,10 @@ h1 {
     font-size: 40px;
     color:rgb(17, 14, 17)
 }
+#mainTarget{
+    width: 100%;
+}
+
 
 /* Preview Boxes */
 .preview_box_container {
@@ -68,8 +82,8 @@ hr{
     padding-bottom: 0.5rem;
     margin-top: 2.5rem;
     font-size: large;
-
 }
+
 .preview_br{
     font-size: 10rem;
 }
@@ -82,12 +96,36 @@ hr{
 .activity_preview_box_area{
     margin-bottom: 0;
 }
-/* Pop-up Base and Pop-ups' buttons */
-.popUpBase {
-    background-color: rgb(219, 226, 185);
+/* Pop-up Base and Pop-ups' buttons 
+basics, styling still needed*/
+#pop_up_base {
+    position: fixed;
+    align-self: center;
+    top: 0;
+    background-color: var(--white-color);
+    border: 1px var(--white-color);
+    border-radius: 1.5em;
+    margin: 1em;
+    padding: 1em 2em 1em 2em;
+    display: inline-block;
+    z-index: 22;
 }
-#mainTarget{
-    width: 100%;
+#pop_up_closer { /* styling not set */
+    border-width: 2px;
+    border-color: var(--black-color);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 50%;
+    display: none;
+    z-index: 9;
 }
 
 /* Activity pop-ups */
