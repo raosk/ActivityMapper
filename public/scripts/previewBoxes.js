@@ -45,7 +45,7 @@ function previewBoxesMain() {
                 
             </div>
         `;
-        document.getElementById("previewsTarget").appendChild(previewBox);        
+        if(document.getElementById("previewsTarget").children.length <= i){document.getElementById("previewsTarget").appendChild(previewBox);} 
         }
 
             }
