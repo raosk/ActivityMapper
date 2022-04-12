@@ -156,10 +156,16 @@ basics, styling still needed*/
         width: 100%;
         align-self: center;
         margin-left: auto;
+        padding-bottom: 10px;
     }
     .activity_preview_box_image_container{
         text-align: left;
     }
     .preview_box_container{
+    }
+}
+@media (min-width:1200px) {
+    #previewsTarget>div {
+        width: 31%;
     }
 }

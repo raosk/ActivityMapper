@@ -1,8 +1,11 @@
 //find out user's screen width:
 let screenWidth = screen.width;
 let characterAmount = screenWidth*0.2
-if (screenWidth > 550){
+if (screenWidth >= 550){
     characterAmount = screenWidth*0.09;
+}
+if (screenWidth >= 1200){
+    characterAmount = screenWidth*0.063
 }
 
 
