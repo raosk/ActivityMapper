@@ -48,6 +48,9 @@ body {
 
 #mainTarget{
     width: 100%;
+    align-items: center;
+    align-self: center;
+    align-content: center;
 }
 
 .navbar ul {
@@ -126,8 +129,9 @@ hr{
 }
 
 .activity_preview_box_title{
-    bottom: 0.5rem;
+    bottom: 0.9rem;
     font-size: xx-large;
+    margin-left: 1rem;
 }
 .activity_preview_box_description{
     bottom: 0rem;
@@ -150,6 +154,7 @@ hr{
 .activity_preview_box_area{
     margin-bottom: 0;
 }
+
 /* Pop-up Base and Pop-ups' buttons 
 basics, styling still needed*/
 #pop_up_base {
@@ -192,3 +197,23 @@ basics, styling still needed*/
 
 /* Settings pop-ups */
 
+@media (min-width: 550px) {
+    #previewsTarget>div {
+        width: 47%;
+    }
+    #previewsTarget {
+        gap: 1rem;
+        justify-content:center;
+        display: inline-flex;
+        flex-wrap: wrap;
+        text-align: center;
+        width: 100%;
+        align-self: center;
+        margin-left: auto;
+    }
+    .activity_preview_box_image_container{
+        text-align: left;
+    }
+    .preview_box_container{
+    }
+}
