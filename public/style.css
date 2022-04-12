@@ -1,7 +1,17 @@
+/* Root for color variables, not final */
+:root {
+    --primary-color: rgb(108, 105, 200);
+    --secondary-color: #f7f1a2;
+    --thirdary-color: #ff967a;
+    --black-color: #343642;
+    --white-color: white;
+}
+
 /* Common */
 body {
     background-color: #bebebe;
-    font-family: Verdana, Geneva, sans-serif;
+    font-family: "Segoe UI",'Corbel', Arial, Helvetica, sans-serif;
+    overflow: auto;
     font-size: xx-large;
     margin-right: 0;
     width: 100%;
@@ -35,6 +45,10 @@ a {
     width: 50px;
     height: 50px;
 }
+#mainTarget{
+    width: 100%;
+}
+
 
 .navbar ul {
     flex: 1;
@@ -72,29 +86,36 @@ a {
 }
 /* Preview Boxes */
 .preview_box_container {
-    width: 90%;
+    width: 100%;
+    margin: 0;
 }
 .activity_preview_box_image {
     width: 100%;
     object-fit: cover;
     margin-left: 0;
+    height:15rem;
 }
 .activity_preview_box_image_container {
     position: relative;
+    height: 15rem;
 }
 .preview_box {
     background-color: white;
     color: black;
     padding-bottom: 2;
     width:100%;
-    padding: 0.3rem;
-    padding-left: 1.5rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0rem;
+    padding-left: 0;
     margin-top: 0;
+    bottom: 0;
 }
 hr{
     position: relative;
     left: 0;
-    bottom: 1rem;
+    bottom: 0rem;
+    width: auto;
+    margin: 0;
 }
 
 .activity_preview_box_title, .activity_preview_box_description{
@@ -105,24 +126,60 @@ hr{
 }
 
 .activity_preview_box_title{
-    bottom: 6rem;
+    bottom: 0.5rem;
+    font-size: xx-large;
 }
 .activity_preview_box_description{
-    bottom: 0;
+    bottom: 0rem;
     font-size: 1.6rem;
     margin-bottom: 0;
+    padding-bottom: 0.5rem;
+    margin-top: 2.5rem;
+    font-size: large;
+}
+
+.preview_br{
+    font-size: 10rem;
 }
 .activity_preview_box_area, .activity_preview_box_time{
     color: black;
     font-size: 1.2rem;
+    padding-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+.activity_preview_box_area{
+    margin-bottom: 0;
+}
+/* Pop-up Base and Pop-ups' buttons 
+basics, styling still needed*/
+#pop_up_base {
+    position: fixed;
+    align-self: center;
+    top: 0;
+    background-color: var(--white-color);
+    border: 1px var(--white-color);
+    border-radius: 1.5em;
+    margin: 1em;
+    padding: 1em 2em 1em 2em;
+    display: inline-block;
+    z-index: 22;
+}
+#pop_up_closer { /* styling not set */
+    border-width: 2px;
+    border-color: var(--black-color);
 }
 
-/* Pop-up Base and Pop-ups' buttons */
-.popUpBase {
-    background-color: rgb(219, 226, 185);
-}
-#mainTarget{
-    width: 100%;
+#overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 50%;
+    display: none;
+    z-index: 9;
 }
 
 /* Activity pop-ups */
