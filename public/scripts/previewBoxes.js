@@ -34,7 +34,7 @@ function previewBoxesMain() {
                     let previewBox = document.createElement("div");
         previewBox.innerHTML =
         `
-            <div class="preview_box_container">
+            <div class="preview_box_container" onclick="activityPopup(${i});">
                 <div class="activity_preview_box_image_container"> 
                     <img class="activity_preview_box_image" src="${imageAddress}">                   
                     <p class="activity_preview_box_title">${dummyData[i].title}
