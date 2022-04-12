@@ -50,6 +50,19 @@ let dummyData = [
         "price": 0,
         "category": ["arts", "music"],
         "createdBy": null
+    },
+    {
+        "activityId": 5,
+        "title": "intellect party",
+        "description": "come have fun, BYOB",
+        "area": "Kempele",
+        "location": "Ouluhalli",
+        "dateStart": "13.04.2022",
+        "dateEnd": "13.04.2022",
+        "dateCreated": "04.04.2022",
+        "price": 0,
+        "category": ["learning", "party"],
+        "createdBy": "John"
     }
 ]
 
