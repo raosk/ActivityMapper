@@ -75,8 +75,9 @@ hr{
 }
 
 .activity_preview_box_title{
-    bottom: 0.5rem;
+    bottom: 0.9rem;
     font-size: xx-large;
+    margin-left: 1rem;
 }
 .activity_preview_box_description{
     bottom: 0rem;
