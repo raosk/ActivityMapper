@@ -21,15 +21,84 @@ body {
 
 
 /* MainView and top bars */
-h1 {
-    font-size: 40px;
-    color:rgb(17, 14, 17)
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+ */
+.navbar {
+    padding: 7px 10px;
+    display: flex;/* 
+    width: 100%; */
+    background-color: #4A4A4A;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 19px;
+    color: whitesmoke;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
 #mainTarget{
     width: 100%;
+    align-items: center;
+    align-self: center;
+    align-content: center;
 }
 
+.navbar ul {
+    flex: 1;
+    text-align: right;
+}
 
+.navbar ul li {
+    display: inline-block;
+    margin: 0 25px;
+}
+
+.mobile-list {
+    display: none;
+}
+
+.desktop-list {
+    margin: 0;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.desktop-list>li>a {
+    align-items: center;
+    align-self: center;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar .desktop-list {
+        display: none;
+    }
+    .mobile-list {
+        display: block;
+        color: whitesmoke;
+        position: fixed;
+        top: 5;
+        right: 0;
+        display: flex;
+        align-items: center
+        
+    }
+
+    .mobile-list {
+        font-size: 27px;
+        
+    }
+}
 /* Preview Boxes */
 .preview_box_container {
     width: 100%;
@@ -72,8 +141,9 @@ hr{
 }
 
 .activity_preview_box_title{
-    bottom: 0.5rem;
+    bottom: 0.9rem;
     font-size: xx-large;
+    margin-left: 1rem;
 }
 .activity_preview_box_description{
     bottom: 0rem;
@@ -96,6 +166,7 @@ hr{
 .activity_preview_box_area{
     margin-bottom: 0;
 }
+
 /* Pop-up Base and Pop-ups' buttons 
 basics, styling still needed*/
 #pop_up_base {
@@ -197,3 +268,29 @@ basics, styling still needed*/
 
 /* Settings pop-ups */
 
+@media (min-width: 550px) {
+    #previewsTarget>div {
+        width: 47%;
+    }
+    #previewsTarget {
+        gap: 1rem;
+        justify-content:center;
+        display: inline-flex;
+        flex-wrap: wrap;
+        text-align: center;
+        width: 100%;
+        align-self: center;
+        margin-left: auto;
+        padding-bottom: 10px;
+    }
+    .activity_preview_box_image_container{
+        text-align: left;
+    }
+    .preview_box_container{
+    }
+}
+@media (min-width:1200px) {
+    #previewsTarget>div {
+        width: 31%;
+    }
+}

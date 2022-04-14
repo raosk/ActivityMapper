@@ -1,9 +1,13 @@
 //find out user's screen width:
 let screenWidth = screen.width;
 let characterAmount = screenWidth*0.2
-if (screenWidth > 900){
-    characterAmount = screenWidth*0.23;
+if (screenWidth >= 550){
+    characterAmount = screenWidth*0.09;
 }
+if (screenWidth >= 1200){
+    characterAmount = screenWidth*0.063
+}
+
 
 
 function previewBoxesMain() {
@@ -30,7 +34,7 @@ function previewBoxesMain() {
                     let previewBox = document.createElement("div");
         previewBox.innerHTML =
         `
-            <div class="preview_box_container">
+            <div class="preview_box_container" onclick="activityPopup(${i});">
                 <div class="activity_preview_box_image_container"> 
                     <img class="activity_preview_box_image" src="${imageAddress}">                   
                     <p class="activity_preview_box_title">${dummyData[i].title}
@@ -38,8 +42,8 @@ function previewBoxesMain() {
                 </div>
 
                 <div class="preview_box">
-                    <p class="activity_preview_box_area"> Area: ${dummyData[i].area}</p>
-                    <p class="activity_preview_box_time"> Time: ${dummyData[i].dateStart} -  ${dummyData[i].dateEnd}</p>
+                    <p class="activity_preview_box_area">${dummyData[i].area}</p>
+                    <p class="activity_preview_box_time">${dummyData[i].dateStart} -  ${dummyData[i].dateEnd}</p>
                     <hr size = "4" width = "100%" color = "black">
                 </div>
                 
@@ -63,8 +67,8 @@ function checkDate() {
             document.querySelectorAll(".preview_box_container")[i].removeChild(previewBox)
             previewBox.innerHTML = 
             `
-            <p class="activity_preview_box_area"> Area: ${dummyData[i].area}</p>
-            <p class="activity_preview_box_time"> Time: ${dummyData[i].dateStart}</p>
+            <p class="activity_preview_box_area">${dummyData[i].area}</p>
+            <p class="activity_preview_box_time">${dummyData[i].dateStart}</p>
             <hr size = "4" width = "100%" color = "black">
             `;
             document.querySelectorAll(".preview_box_container")[i].appendChild(previewBox);                    
@@ -97,8 +101,8 @@ function checkDate() {
             document.querySelectorAll(".preview_box_container")[i].removeChild(previewBox)
             previewBox.innerHTML = 
             `
-            <p class="activity_preview_box_area"> Area: ${dummyData[i].area}</p>
-            <p class="activity_preview_box_time"> Time: Today</p>
+            <p class="activity_preview_box_area">${dummyData[i].area}</p>
+            <p class="activity_preview_box_time">Today</p>
             <hr size = "4" width = "100%" color = "black">
             `;
             document.querySelectorAll(".preview_box_container")[i].appendChild(previewBox);
@@ -108,8 +112,8 @@ function checkDate() {
             document.querySelectorAll(".preview_box_container")[i].removeChild(previewBox)
             previewBox.innerHTML = 
             `
-            <p class="activity_preview_box_area"> Area: ${dummyData[i].area}</p>
-            <p class="activity_preview_box_time"> Time: Tomorrow</p>
+            <p class="activity_preview_box_area">${dummyData[i].area}</p>
+            <p class="activity_preview_box_time">Tomorrow</p>
             <hr size = "4" width = "100%" color = "black">
             `;
             document.querySelectorAll(".preview_box_container")[i].appendChild(previewBox);
@@ -119,8 +123,8 @@ function checkDate() {
             document.querySelectorAll(".preview_box_container")[i].removeChild(previewBox)
             previewBox.innerHTML = 
             `
-            <p class="activity_preview_box_area"> Area: ${dummyData[i].area}</p>
-            <p class="activity_preview_box_time"> Time: Yesterday</p>
+            <p class="activity_preview_box_area">${dummyData[i].area}</p>
+            <p class="activity_preview_box_time">Yesterday</p>
             <hr size = "4" width = "100%" color = "black">
             `;
             document.querySelectorAll(".preview_box_container")[i].appendChild(previewBox);
