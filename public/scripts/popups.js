@@ -51,6 +51,15 @@ function searchPopUp() {
         <button id="actual_button" class="searcher" onclick="resultsView();">Search</button> `
     }
 
+function isLoggedIn() { /* checks for whether or not the user is logged in, code and more somewhere else maybe*/ 
+    if (false) {
+        console.log("brings to profile view if logged in")
+    }
+    else {
+        loginPopUp();
+    }
+}
+
 function loginPopUp() {
     popUpBase()
     const node = document.createElement("h2");
