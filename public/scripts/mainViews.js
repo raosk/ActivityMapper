@@ -1,9 +1,9 @@
 function viewBase() {
     document.getElementById("mainTarget").innerHTML = `
     <div>
-        <button onclick="SearchPopUp();">Search</button>
+        <button onclick="searchPopUp();">Search</button>
         <button onclick="mainView();">Main</button>
-        <button onclick="LoginPopUp();">Profile</button>
+        <button onclick="loginPopUp();">Profile</button>
         <div id="titleBarTarget"></div>
     </div>
     <div id="previewsTarget"></div>

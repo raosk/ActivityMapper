@@ -2,7 +2,7 @@
 :root {
     --primary-color: rgb(108, 105, 200);
     --secondary-color: #f7f1a2;
-    --thirdary-color: #ff967a;
+    --thirdary-color: #929292;
     --black-color: #343642;
     --white-color: white;
 }
@@ -99,21 +99,58 @@ hr{
 /* Pop-up Base and Pop-ups' buttons 
 basics, styling still needed*/
 #pop_up_base {
-    position: fixed;
-    align-self: center;
-    top: 0;
+    position: absolute;
+    display: grid;
+    align-items: center;
+    text-align: left;
+    top: 2em;
     background-color: var(--white-color);
     border: 1px var(--white-color);
-    border-radius: 1.5em;
-    margin: 1em;
-    padding: 1em 2em 1em 2em;
-    display: inline-block;
+    border-radius: 25px;
+    margin-left: 5%;
+    padding: 1em;
     z-index: 22;
+    max-height: 80%;
+    max-width: 90%;
+    overflow-x: hidden;
 }
-#pop_up_closer { /* styling not set */
-    border-width: 2px;
-    border-color: var(--black-color);
+
+#pop_up_content_target {
+    overflow-y: auto;
 }
+
+#pop_up_base p {
+    font-size: medium;
+    margin: auto;
+}
+
+#actual_button {
+    color: var(--white-color);
+    background: var(--primary-color);
+    display: inline-block;
+    padding: 0.5em 2em 0.5em 2em;
+    border: 2px var(--primary-color);
+    border-radius: 1.5em;
+    min-width: 3.5em;
+    cursor: pointer;
+}
+
+#text_button {
+    all: unset;
+    color: var(--thirdary-color);
+    font-size: small;
+    cursor: pointer;
+}
+
+#pop_up_closer { 
+    all: unset;
+    display: grid;
+    cursor: pointer;
+    margin: 0.5em;
+    color: var(--white-color);
+    align-content: flex-end;
+}
+
 
 #overlay {
     position: fixed;
@@ -126,6 +163,28 @@ basics, styling still needed*/
     opacity: 50%;
     display: none;
     z-index: 9;
+}
+
+#pop_up_header {
+    background-color: var(--primary-color);
+    position: relative;
+    display: flexbox;
+    padding-bottom: 10px;
+    border-radius: 25px 25px 0px 0px;
+
+}
+
+#pop_up_footer {
+    margin-top: 5px;
+    border-top-style: solid;
+    border-color: var(--black-color);
+}
+
+@media screen and (min-width: 768px) {
+    #pop_up_base {
+        width: 40%;
+        align-self: center;
+    }
 }
 
 /* Activity pop-ups */
