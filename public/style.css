@@ -269,6 +269,20 @@ basics, styling still needed*/
     margin-left: 2em;
 }
 
+#profile_img {
+    max-width: 30px;
+    display: flex;
+}
+
+#bg_img {
+    max-width: 40%;
+    display: inline;
+}
+
+#pop_up_settings_base h3 {
+    display: inline;
+}
+
 @media screen and (min-width: 768px) {
     #pop_up_base {
         width: 40%;

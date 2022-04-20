@@ -90,7 +90,7 @@ function registerPopUp() {
     node.appendChild(textnode);
     document.getElementById("pop_up_header").appendChild(node);
     document.getElementById("pop_up_content_target").innerHTML = `
-    <div class="pop_up_login_base">
+    <div class="pop_up_register_base">
         <div id="register_field">
             <p class="field_text">email</p>
             <input type="email" id="email" placeholder="email@email.com">
@@ -103,6 +103,57 @@ function registerPopUp() {
     document.getElementById("pop_up_footer").innerHTML = `
         <button id="text_button" onclick=" loginPopUp();">Already a member??</button> 
         <button id="actual_button" onclick="">Register</button>    `
+}
+
+function settingsPopUp() {
+    popUpBase();
+    const node = document.createElement("h2");
+    const textnode = document.createTextNode("Settings");
+    node.appendChild(textnode);
+    document.getElementById("pop_up_header").appendChild(node);
+    document.getElementById("pop_up_content_target").innerHTML = `
+    <div class="pop_up_settings_base">
+        <div id="settings_field">
+        <img id="profile_img" src="images/icons/thick_logo-modified.png" alt="#"> </img>
+            <h3 class="user_email">email@email.com</h3>
+        </div>
+        <img id="bg_img" src="images/icons/hiker_hd.png" alt="#"> </img>
+            
+        </div>
+    `
+    document.getElementById("pop_up_footer").innerHTML = `
+        <button id="actual_button" onclick="">Log out</button>  
+        <button id="text_button">Delete Account</button> `
+}
+
+function createPopUp() {
+    popUpBase();
+    const node = document.createElement("h2");
+    const textnode = document.createTextNode("Create New Activity");
+    node.appendChild(textnode);
+    document.getElementById("pop_up_header").appendChild(node);
+    document.getElementById("pop_up_content_target").innerHTML = `
+    <div class="pop_up_create_base">
+        <div id="create_field">
+            <input type="text" id="title" placeholder="Title">
+            <input type="text" id="desc" placeholder="Description">
+            <p class="field_text">Price: </p>
+            <input type="number" id="price" placeholder="0">
+            <p class="field_text">€</p>
+            <p class="field_text">Categories: </p>
+            <div id="category_choice_field">categories here</div>
+            <p class="field_text">Date: </p>
+            <input type="date" name="start date" id="start_date">
+            <p class="field_text"> - </p>
+            <input type="date" name="end date" id="end_date">
+            <p class="field_text">Area: </p>
+            <input type="text" id="area">
+            <p class="field_text">Location: </p>
+            <input type="text" id="location">
+        </div>
+    </div>`
+    document.getElementById("pop_up_footer").innerHTML = `
+        <button id="actual_button" onclick="">Create</button>   `
 }
 
 
