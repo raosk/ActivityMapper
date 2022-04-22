@@ -1,15 +1,61 @@
+function checkDate(i){
+    let indi_date_var = ""
+    let today = new Date();
+    let day = String(today.getDate()).padStart(2, '0');
+    let month = String(today.getMonth() + 1).padStart(2, '0'); //because january is 00
+    let year = today.getFullYear();
 
+
+    let tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    let dayTomorrow = String(tomorrow.getDate()).padStart(2, '0');
+    let monthTomorrow = String(tomorrow.getMonth() + 1).padStart(2, '0');
+    let yearTomorrow = tomorrow.getFullYear();
+    
+    tomorrow = dayTomorrow + '.' + monthTomorrow + '.' + yearTomorrow;
+
+    let yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    let dayYesterday = String(yesterday.getDate()).padStart(2, '0');
+    let monthYesterday = String(yesterday.getMonth() + 1).padStart(2, '0');
+    let yearYesterday = yesterday.getFullYear();
+    
+    yesterday = dayYesterday + '.' + monthYesterday + '.' + yearYesterday;
+    
+    today = day + '.' + month + '.' + year;
+    if (dummyData[i].dateStart == dummyData[i].dateEnd && dummyData[i].dateStart == today){
+        let indi_date_var = "today"
+        return indi_date_var;
+    }
+    if (dummyData[i].dateStart == dummyData[i].dateEnd && dummyData[i].dateStart == tomorrow){
+        let indi_date_var = "tomorrow"
+        return indi_date_var;
+    } 
+    if (dummyData[i].dateStart == dummyData[i].dateEnd && dummyData[i].dateStart == yesterday){
+        let indi_date_var = "yesterday"
+        return indi_date_var;
+    }
+
+    if (indi_date_var != ""){
+        let indi_date_var2 = indi_date_var
+        return indi_date_var2;
+    }
+}
 function popUpBase() {
-    document.getElementById("pop_up_target").innerHTML = `
+    let mainTarget = document.getElementById("mainTarget")
+    pop_up_target.innerHTML = `
     <div id="pop_up_base">
+    <div class="pop_up_base2">
         <div id=pop_up_header>
-            <button id="pop_up_closer" onclick="closePopUp();">X</button>
+            <button id="pop_up_closer" onclick="closePopUp();">x</button>
         </div>
         <div id=pop_up_content_target></div>
         <div id=pop_up_footer></div>
     </div>
+    </div>
     <div id="overlay" onclick="closePopUp()"></div>
     `
+    mainTarget.appendChild
     let overlay = document.getElementById("overlay");
     overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -112,4 +158,42 @@ function closePopUp() {
     popUpBoard.style.display = 'none';
     overlay.style.display = 'none';
     document.body.style.overflow = 'auto';
+}
+
+function activityPopup(n) {
+    popUpBase()
+    let mainTarget = document.getElementById("mainTarget")
+    fullscreen.innerHTML = `
+        <div class="indi_fullscreen"> 
+            <div class="indi_info_part">
+                <div class="indi_img_box">
+                    <div class="indi_img"></div>
+                    <div class="indi_exit_btn" onclick="closeActivityPopup()"></div>
+                    <div class="indi_title"></div>
+                </div>
+                <div class="indi_text_desc">
+                    <div class="indi_desc"></div>
+                    <div class="indi_bonus_box">
+                        <div class="indi_category_list"></div>
+                        <div class="indi_price">${dummyData[n].price}</div>
+                        <div class="indi_date">
+                    </div>
+                    <div class="bottom_bar indi_add_to_list_segment">
+                        <div class="bottom_bar_text"> Add to list:</div>
+                        <div class="bottom_bar_btns indi_bottom_btns">
+                            <a onclick="addToDo(${dummyData[n].id})><button class="bottom_btn">To-do</button></a>
+                            <a onclick="addDone(${dummyData[n].id})><button class="bottom_btn">Done</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="overlay" onclick="closeActivityPopUp()"></div>
+    `
+    mainTarget.appendChild(fullscreen)
+    let overlay = document.getElementById("overlay"); //from Elias's code
+    overlay.style.display = 'flex'; //-same
+    document.body.style.overflow = 'hidden'; //same
+
+    checkDate(n)
 }
