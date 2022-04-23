@@ -93,8 +93,11 @@ function searchPopUp() {
         </div>
     `
     document.getElementById("pop_up_footer").innerHTML = `
+    <div class="buttons_bottom">
         <button id="text_button" onclick="">Clear Search</button>  
-        <button id="actual_button" class="searcher" onclick="resultsView();">Search</button> `
+        <button id="actual_button" class="searcher" onclick="resultsView();">Search</button>
+    </div>
+     `
     }
 
 function isLoggedIn() { /* checks for whether or not the user is logged in, code and more somewhere else maybe*/ 

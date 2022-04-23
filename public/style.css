@@ -92,6 +92,62 @@ body {
     display: inline-block;
 }
 
+#pop_up_base {
+    width: 600px;
+    position: fixed;
+    display: inline-block;
+    align-items: center;
+    align-self: center;
+    top: 5%;
+    background-color: var(--white-color);
+    border: 1px var(--white-color);
+    border-radius: 25px;
+    z-index: 22;
+    max-height: 80%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow: hidden;
+    top: 7%;
+    justify-content: center;
+    margin-left: 20%;
+}
+
+#pop_up_base2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    align-content: left;
+    align-items: center;
+    max-width: 600px;
+}
+#login_field {
+    text-align: left;
+}
+#search_field {
+    padding-right: 2rem;
+}
+.buttons_bottom{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    align-content: center;
+    padding-left: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+h2{
+    top: 0;
+    left: 3rem;
+    width: 100%;
+    background-color: var(--primary-color);
+    padding-left:1.5rem;
+    color: white;
+    font-size: xx-large;
+
+}
+
 @media only screen and (max-width: 800px) {
     .navbar .desktop-list {
         display: none;
@@ -183,20 +239,36 @@ hr{
 /* Pop-up Base and Pop-ups' buttons 
 basics, styling still needed*/
 #pop_up_base {
-    display: grid;
     position: fixed;
+    display: grid;
     align-items: center;
     align-self: center;
     text-align: left;
+    top: 5%;
+    background-color: var(--white-color);
+    border: 1px var(--white-color);
     border-radius: 25px;
+    margin-left: 5%;
     z-index: 22;
+    max-height: 80%;
     max-width: 90%;
+    overflow-x: hidden;
     overflow: hidden;
     top: 7%;
     justify-content: center;
     margin-left: 5%;
+    width: 450px;
 }
 
+#pop_up_base2{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+    width: 1000px;
+}
 #pop_up_content_target {
     overflow-y: auto;
     margin-left: 2em;
@@ -231,11 +303,13 @@ basics, styling still needed*/
 #pop_up_closer { 
     all: unset;
     display: grid;
-    position: sticky;
+    position: absolute;
     cursor: pointer;
-    margin: 0.5em;
     color: var(--white-color);
     align-content: flex-end;
+    right: 0.5rem;
+    top: 0;
+    padding-right: 0.5rem;
 }
 
 
@@ -252,20 +326,21 @@ basics, styling still needed*/
     z-index: 9;
 }
 
-#pop_up_header {
+ #pop_up_header {
     background-color: var(--primary-color);
     position: relative;
-    display: inline;
+    display: inline-block;
     padding-bottom: 10px;
     border-radius: 25px 25px 0px 0px;
     width: 100%;
-}
+} 
 
 #pop_up_footer {
     margin-top: 5px;
     border-top-style: solid;
     border-color: var(--black-color);
-    margin-left: 2em;
+    margin-left: 0;
+    width: 100%;
 }
 
 @media screen and (min-width: 768px) {
