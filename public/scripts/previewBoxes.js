@@ -127,32 +127,3 @@ function checkDate() {
         }       
     }
 }
-/* 
-function previewBoxesResults() {
-    document.getElementById("previewsTarget").innerHTML = `
-        <div class="preview_box_container">
-            <div class="preview_box">
-                <p>${dummyData[3].title}</p>
-                <p>${dummyData[3].area} </p>
-                <p>${dummyData[3].dateStart} -  ${dummyData[1].dateEnd}</p>
-            </div>
-        </div>
-    `
-} */
-
-function imageSelector(){  
-    let base = "/images/preview/";
-    let images = [base+"arts.jpg", base+"crafts.jpeg", base+"culture.png", base+"food.png", base+"learning.jpg", base+"music.png", base+"nature.webp", base+"party.jpeg", base+"sport.jpg", base+"other.jpg"];
-    for(let i = 0; i < dummyData.length; i++){
-        for(let k = 0; k < dummyData[i].category.length; k++){ 
-            for(let j = 0; j < images.length; j++){ 
-                if(dummyData[i].category[k].includes(images[j].substring(16,20))){
-                    console.log(dummyData[i].title + dummyData[i].category[k] + images[j].substring(16,20));
-                    let imageAddress = images[j];
-                    console.log(imageAddress)
-                }
-            }
-        }
-    }
-    
-}

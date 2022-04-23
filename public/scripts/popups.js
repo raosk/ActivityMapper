@@ -164,13 +164,12 @@ function closePopUp() {
 }
 
 function activityPopup(n) {
-    popUpBase()
     let mainTarget = document.getElementById("mainTarget")
     fullscreen.innerHTML = `
         <div class="indi_fullscreen"> 
             <div class="indi_info_part">
                 <div class="indi_img_box">
-                    <div class="indi_img"></div>
+                    <div class="indi_img">${dummyData[n]}</div>
                     <div class="indi_exit_btn" onclick="closeActivityPopup()"></div>
                     <div class="indi_title"></div>
                 </div>
@@ -194,9 +193,41 @@ function activityPopup(n) {
         <div id="overlay" onclick="closeActivityPopUp()"></div>
     `
     mainTarget.appendChild(fullscreen)
-    let overlay = document.getElementById("overlay"); //from Elias's code
-    overlay.style.display = 'flex'; //-same
-    document.body.style.overflow = 'hidden'; //same
+    let overlay = document.getElementById("overlay");
+    overlay.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; 
 
-    checkDate(n)
+    checkDate(n);
+    imgSelect(n);
 }
+
+let base = "/images/preview/";
+    let images = [base+"arts.jpg", base+"crafts.jpeg", base+"culture.png", base+"food.png", base+"learning.jpg", base+"music.png", base+"nature.webp", base+"party.jpeg", base+"sport.jpg", base+"other.jpg"];
+    images = images.reverse();
+    for(let k = 0; k < dummyData[i].category.length; k++){ 
+        for(let j = 0; j < images.length; j++){ 
+            if(dummyData[i].category[k].includes(images[j].substring(16,20))){
+                let imageAddress = images[j];
+                let previewBox = document.createElement("div");
+    previewBox.innerHTML =
+    `
+        <div class="preview_box_container" onclick="activityPopup(${i});">
+            <div class="activity_preview_box_image_container"> 
+                <img class="activity_preview_box_image" src="${imageAddress}">                   
+                <p class="activity_preview_box_title">${dummyData[i].title}
+                <p class="activity_preview_box_description">${displayedText} </p></p>
+            </div>
+
+            <div class="preview_box">
+                <p class="activity_preview_box_area">${dummyData[i].area}</p>
+                <p class="activity_preview_box_time">${dummyData[i].dateStart} -  ${dummyData[i].dateEnd}</p>
+                <hr size = "4" width = "100%" color = "black">
+            </div>
+            
+        </div>
+    `;
+    if(document.getElementById("mainTarget").children[3].length <= i){document.getElementById("previewsTarget").appendChild(previewBox);} 
+    }
+
+        }
+    }
