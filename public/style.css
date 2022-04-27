@@ -166,6 +166,7 @@ body {
         padding-bottom: 5px;
         
     }
+}
 
 #pop_up_base {
     width: 600px;
@@ -243,6 +244,7 @@ h2{
         
     }
 }
+
 /* Preview Boxes */
 .preview_box_container {
     width: 100%;
@@ -344,6 +346,7 @@ basics, styling still needed*/
     align-items: center;
     width: 1000px;
 }
+
 #pop_up_content_target {
     overflow-y: auto;
     margin-left: 2em;
@@ -387,7 +390,6 @@ basics, styling still needed*/
     padding-right: 0.5rem;
 }
 
-
 #overlay {
     position: fixed;
     top: 0;
@@ -401,7 +403,7 @@ basics, styling still needed*/
     z-index: 9;
 }
 
- #pop_up_header {
+#pop_up_header {
     background-color: var(--primary-color);
     position: relative;
     display: inline-block;
@@ -452,9 +454,10 @@ basics, styling still needed*/
     .activity_preview_box_image_container{
         text-align: left;
     }
-    .preview_box_container{
-    }
+/*     .preview_box_container{
+    } */
 }
+
 @media (min-width:1200px) {
     #previewsTarget>div {
         width: 31%;
