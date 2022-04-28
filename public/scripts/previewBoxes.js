@@ -1,5 +1,5 @@
 //find out user's screen width:
-let screenWidth = screen.width;
+let screenWidth = window.innerWidth;
 let characterAmount = screenWidth*0.2
 if (screenWidth >= 550){
     characterAmount = screenWidth*0.09;
@@ -18,18 +18,14 @@ function previewBoxesMain() {
         }else {
             displayedText = dummyData[i].description;
         }
-        console.log(displayedText); 
         
         let base = "/images/preview/";
         let images = [base+"arts.jpg", base+"crafts.jpeg", base+"culture.png", base+"food.png", base+"learning.jpg", base+"music.png", base+"nature.webp", base+"party.jpeg", base+"sport.jpg", base+"other.jpg"];
         images = images.reverse();
-        console.log(images);
         for(let k = 0; k < dummyData[i].category.length; k++){ 
             for(let j = 0; j < images.length; j++){ 
                 if(dummyData[i].category[k].includes(images[j].substring(16,20))){
-                    console.log(dummyData[i].title + dummyData[i].category[k] + images[j].substring(16,20));
                     let imageAddress = images[j];
-                    console.log(imageAddress)
 
                     let previewBox = document.createElement("div");
         previewBox.innerHTML =
@@ -130,33 +126,4 @@ function checkDate() {
             document.querySelectorAll(".preview_box_container")[i].appendChild(previewBox);
         }       
     }
-}
-/* 
-function previewBoxesResults() {
-    document.getElementById("previewsTarget").innerHTML = `
-        <div class="preview_box_container">
-            <div class="preview_box">
-                <p>${dummyData[3].title}</p>
-                <p>${dummyData[3].area} </p>
-                <p>${dummyData[3].dateStart} -  ${dummyData[1].dateEnd}</p>
-            </div>
-        </div>
-    `
-} */
-
-function imageSelector(){  
-    let base = "/images/preview/";
-    let images = [base+"arts.jpg", base+"crafts.jpeg", base+"culture.png", base+"food.png", base+"learning.jpg", base+"music.png", base+"nature.webp", base+"party.jpeg", base+"sport.jpg", base+"other.jpg"];
-    for(let i = 0; i < dummyData.length; i++){
-        for(let k = 0; k < dummyData[i].category.length; k++){ 
-            for(let j = 0; j < images.length; j++){ 
-                if(dummyData[i].category[k].includes(images[j].substring(16,20))){
-                    console.log(dummyData[i].title + dummyData[i].category[k] + images[j].substring(16,20));
-                    let imageAddress = images[j];
-                    console.log(imageAddress)
-                }
-            }
-        }
-    }
-    
 }
