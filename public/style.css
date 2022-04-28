@@ -322,8 +322,8 @@ basics*/
     display: inline-block;/*
     top: 50%;
     left: 50%;
-    transform: translate(-50% , -50%);*/
-    display: grid;
+    transform: translate(-50% , -50%);
+    display: grid;*/
     align-items: center;
     align-self: center;
     text-align: left;
