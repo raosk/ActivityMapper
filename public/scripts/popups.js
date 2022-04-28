@@ -168,7 +168,6 @@ function settingsPopUp() {
     document.getElementById("pop_up_content_target").innerHTML = `
     <div class="pop_up_settings_base">
         <div id="settings_field">
-        <img id="profile_img" src="images/icons/thick_logo-modified.png" alt="#"> </img>
             <h3 class="user_email">email@email.com</h3>
         </div>
         <img id="bg_img" src="images/icons/hiker_hd.png" alt="#"> </img>
@@ -191,36 +190,77 @@ function createPopUp() {
         <div class="pop_up_create_base">
             <input type="text" id="title_field" placeholder="Title" required>
             <input type="text" id="desc_field" placeholder="Description" required>
-            <label for="price" class="field_text">Price: </label>
-            <input type="number" name="price" id="price_field" placeholder="0" min="0" max="9999">
+            <div class="form-group">
+                <label for="price" class="field_text">Price: </label>
+                <input type="number" name="price" id="price_field" placeholder="0" min="0" max="9999">
             <p class="field_text">€</p>
-            <p class="field_text">Categories: </p>
-            <div id="category_choice_field">
-                <input type="checkbox" class="catCheck" id="nature" name="nature" value="nature" onclick="limitChecks(this);">
-                <label for="nature">Nature</label>
-                <input type="checkbox" class="catCheck" id="sport" name="sport" value="sport" onclick="limitChecks(this);">
-                <label for="sport">Sport</label>
-                <input type="checkbox" class="catCheck" id="culture" name="culture" value="culture" onclick="limitChecks(this);">
-                <label for="culture">Culture</label>
-                <input type="checkbox" class="catCheck" id="music" name="music" value="music" onclick="limitChecks(this);">
-                <label for="music">Music</label>
-                <input type="checkbox" class="catCheck" id="arts" name="arts" value="arts" onclick="limitChecks(this);">
-                <label for="arts">Arts</label>
-                <input type="checkbox" class="catCheck" id="crafts" name="crafts" value="crafts" onclick="limitChecks(this);">
-                <label for="crafts">Crafts</label><br>
-                <input type="checkbox" class="catCheck" id="learning" name="learning" value="learning" onclick="limitChecks(this);">
-                <label for="learning">Learning</label>
-                <input type="checkbox" class="catCheck" id="party" name="party" value="party" onclick="limitChecks(this);">
-                <label for="party">Party</label>
             </div>
-            <p class="field_text">Date: </p>
-            <input type="date" name="start date" id="start_date" required>
-            <p class="field_text"> - </p>
-            <input type="date" name="end date" id="end_date" required>
-            <p class="field_text">Area: </p>
-            <input type="text" id="area" required>
-            <p class="field_text">Location: </p>
-            <input type="text" id="location" required>
+            <div id="category_choice_field">
+                <div class="form-group">
+                    <label for="category1" class="field_text">First Category: </label>
+                    <select name="category1" id="category1" required>
+                    <option hidden disabled selected value> -- </option>
+                    <option value="arts">Arts</option>
+                    <option value="crafts">Crafts</option>
+                    <option value="culture">Culture</option>
+                    <option value="food">Food</option>
+                    <option value="learning">Learning</option>
+                    <option value="music">Music</option>
+                    <option value="nature">Nature</option>
+                    <option value="other">Other</option>
+                    <option value="party">Party</option>
+                    <option value="sport">Sport</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                <label for="category2" class="field_text">Second Category*: </label>
+                <select name="category2" id="category2">
+                <option hidden disabled selected value> -- </option>
+                    <option value="arts">Arts</option>
+                    <option value="crafts">Crafts</option>
+                    <option value="culture">Culture</option>
+                    <option value="food">Food</option>
+                    <option value="learning">Learning</option>
+                    <option value="music">Music</option>
+                    <option value="nature">Nature</option>
+                    <option value="other">Other</option>
+                    <option value="party">Party</option>
+                    <option value="sport">Sport</option>
+                </select>
+                </div>
+                <div class="form-group">
+                <label for="category3" class="field_text">Third Category*: </label>
+                <select name="category3" id="category3">
+                <option hidden disabled selected value> -- </option>
+                    <option value="arts">Arts</option>
+                    <option value="crafts">Crafts</option>
+                    <option value="culture">Culture</option>
+                    <option value="food">Food</option>
+                    <option value="learning">Learning</option>
+                    <option value="music">Music</option>
+                    <option value="nature">Nature</option>
+                    <option value="other">Other</option>
+                    <option value="party">Party</option>
+                    <option value="sport">Sport</option>
+                </select>
+                <p>* not required</p>
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+                <label for="start_date" class="field_text">Date: </label>
+                <input type="date" name="start_date" id="start_date" required>
+                <p class="field_text"> - </p>
+                <input type="date" name="end_date" id="end_date" required>
+            </div>
+            <div class="form-group">
+                <label for="area" class="field_text">Area: </label>
+                <input type="text" id="area" name="area" required>
+            </div>
+            <div class="form-group">
+                <label for="location" class="field_text">Location: </label>
+                <input type="text" id="location" name="location" required>
+            </div>
         </div>
         <div id="in_form_footer"></div>    
     </form>`
@@ -230,57 +270,6 @@ function createPopUp() {
         oldFooter.remove();
 
     
-}
-let chosenCats = [];
-function limitChecks(ele) {
-    
-    let catCheckList = document.querySelectorAll(".catCheck");
-    
-    if (document.getElementById(`${ele.id}`).checked) {
-        actualLimitCheck();
-        if (chosenCats.length < 3) {
-            chosenCats.push(`${ele.id}`);
-            console.log(chosenCats);
-            
-        }
-    }
-    else {
-        actualLimitCheck();
-            console.log(`${ele.id} to be removed from array`);
-            chosenCats = chosenCats.filter(function(item) {
-                return item != `${ele.id}`;
-            });
-            console.log("modified chosenCats below:");
-            console.log(chosenCats);
-
-            
-        
-        /*let catCheckList = document.querySelectorAll(".catCheck");
-            for (let i = 0; i < catCheckList.length; i++) {
-                catCheckList[i].disabled = false;
-                
-                
-            }*/
-    }
-    
-}
-function actualLimitCheck() {
-    let catCheckList = document.querySelectorAll(".catCheck");
-    if (chosenCats.length <= 3) {
-        for (let i = 0; i < catCheckList.length; i++) {
-                    document.getElementById(`${catCheckList[i].id}`).disabled = false;
-                }
-    }
-    else if (chosenCats.length >= 3) {
-        console.log("no more than 3 categories can be selected");
-        for (let i = 0; i < catCheckList.length; i++) {
-            if (document.getElementById(`${catCheckList[i].id}`).checked === false) {
-                document.getElementById(`${catCheckList[i].id}`).disabled = true;
-            } 
-            console.log(catCheckList[i]);
-            
-        }
-    }
 }
 /* ^^^currently testing out forms, required inputs and submit actions*/
 

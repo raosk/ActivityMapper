@@ -439,6 +439,7 @@ basics*/
 #bg_img {
     max-width: 40%;
     display: inline;
+    align-self: center;
 }
 
 #pop_up_settings_base {
@@ -462,8 +463,24 @@ basics*/
     display: inline;
 }
 
+#pop_up_create_base {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
 input[type="checkbox"] {
     font-size: small;
+}
+
+label {
+    font-size: small;
+}
+
+#field_text {
+    font-size: smaller;
+    display: inline;
 }
 
 @media screen and (min-width: 768px) {
