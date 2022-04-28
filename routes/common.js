@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+
+// This route is just for testing and will be removed
 router.get("/db", async (req, res) => {
     const { Pool } = require('pg');
     const pool = ( () => {
@@ -20,7 +22,7 @@ router.get("/db", async (req, res) => {
     })();
     try {
         const client = await pool.connect();
-        const result = await client.query('SELECT id, name, email FROM profile;');  // This is for the test table, which will be removed
+        const result = await client.query('SELECT id, name, email FROM profile;');
         const results = { 'results': (result) ? result.rows : null};
         res.json( results );
         client.release();
@@ -29,6 +31,8 @@ router.get("/db", async (req, res) => {
         res.json({ error: err });
     }
 });
+
+
 
 router.get("/new", async (req, res) => {
     const { Pool } = require('pg');
@@ -50,7 +54,7 @@ router.get("/new", async (req, res) => {
     try {
         const client = await pool.connect();
         const result = await client.query(`
-        select * from activity
+        select activity_id, title, description, area, location, date_start AS dateStart, date_end AS dateEnd, date_created AS dateCreated, category, user_name AS createdBy FROM activity
         inner join feed on activity.activity_id=feed.feed_id
         inner join users on feed.user_user_id=user_id
         inner join activity_has_category on activity.activity_id=activity_has_category.activity_activity_id
@@ -58,9 +62,11 @@ router.get("/new", async (req, res) => {
         order by date_created ASC 
         limit 20
         `);
-        // const result = await client.query('SELECT id, name, email FROM profile;');  // This is for the test table, which will be removed
         const results = { 'results': (result) ? result.rows : null};
-        res.json( results );
+        //res.json( results );
+        //res.status(200)
+        res.results = results       // ???
+        console.log(res.results)    // ???
         client.release();
     } catch (err) {
         console.error(err);
@@ -98,7 +104,6 @@ router.get("/popular", async (req, res) => {
         order by done desc
         limit 20;
         `);
-        // const result = await client.query('SELECT id, name, email FROM profile;');  // This is for the test table, which will be removed
         const results = { 'results': (result) ? result.rows : null};
         res.json( results );
         client.release();
@@ -138,7 +143,6 @@ router.get("/upcoming", async (req, res) => {
         order by date_start asc
         limit 20;
         `);
-        // const result = await client.query('SELECT id, name, email FROM profile;');  // This is for the test table, which will be removed
         const results = { 'results': (result) ? result.rows : null};
         res.json( results );
         client.release();
@@ -177,7 +181,6 @@ router.get("/past", async (req, res) => {
         order by date_start asc
         limit 20;
         `);
-        // const result = await client.query('SELECT id, name, email FROM profile;');  // This is for the test table, which will be removed
         const results = { 'results': (result) ? result.rows : null};
         res.json( results );
         client.release();
@@ -188,7 +191,7 @@ router.get("/past", async (req, res) => {
 });
 
 
-// TESTING: START
+// JUST TESTING: START
 router.get("/banana", (req, res) => {
     res.send(`
     <h1>Fruit?</h1>
@@ -211,7 +214,7 @@ router.post("/result", (req, res) => {
     }
 
 });
-// TESTING: END
+// JUST TESTING: END
 
 router.get('/*', (req, res) => {
     res.status(404).send(`

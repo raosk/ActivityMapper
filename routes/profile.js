@@ -32,7 +32,6 @@ router.get("/todo", async (req, res) => {
         inner join category on category_category_id=category_id
         where to_do = '1' and done = '0' and user_name='käyttäjä1'
         `);
-        // const result = await client.query('SELECT id, name, email FROM profile;');  // This is for the test table, which will be removed
         const results = { 'results': (result) ? result.rows : null};
         res.json( results );
         client.release();
@@ -69,7 +68,6 @@ router.get("/done", async (req, res) => {
         inner join category on category_category_id=category_id
         where done = '1' and to_do ='0' and user_name='käyttäjä1'
         `);
-        // const result = await client.query('SELECT id, name, email FROM profile;');  // This is for the test table, which will be removed
         const results = { 'results': (result) ? result.rows : null};
         res.json( results );
         client.release();
