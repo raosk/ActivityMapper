@@ -183,18 +183,22 @@ hr{
 }
 
 /* Pop-up Base and Pop-ups' buttons 
-basics, styling still needed*/
+basics*/
+#pop_up_target {
+    align-self: center;
+}
+
 #pop_up_base {
     position: fixed;
-    display: grid;
-    align-items: center;
-    text-align: left;
-    top: 5%;
+    display: inline-block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
     background-color: var(--white-color);
     border: 1px var(--white-color);
     border-radius: 25px;
-    margin-left: 5%;
     z-index: 22;
+    min-width: 80%;
     max-height: 80%;
     max-width: 90%;
     overflow-x: hidden;
@@ -235,7 +239,7 @@ basics, styling still needed*/
     cursor: pointer;
     margin: 0.5em;
     color: var(--white-color);
-    align-content: flex-end;
+    text-align: left;
 }
 
 
@@ -249,20 +253,24 @@ basics, styling still needed*/
     background-color: black;
     opacity: 50%;
     display: none;
-    z-index: 9;
+    z-index: 19;
 }
 
 #pop_up_header {
     background-color: var(--primary-color);
     position: relative;
-    display: flexbox;
+    display: flex;
     padding-bottom: 10px;
     border-radius: 25px 25px 0px 0px;
     
 
 }
 
-#pop_up_footer {
+#pop_up_header h2 {
+    font-size: 26;
+}
+
+#pop_up_footer, #in_form_footer {
     margin-top: 5px;
     border-top-style: solid;
     border-color: var(--black-color);
@@ -279,13 +287,34 @@ basics, styling still needed*/
     display: inline;
 }
 
+#pop_up_settings_base {
+    display: flex;
+    flex-direction: column;
+}
+
+#title_field, #desc_field {
+    width: 80%;
+}
+
+#desc_field {
+    min-height: 100px;
+}
+
+#price_field {
+    width: 45px;
+}
+
 #pop_up_settings_base h3 {
     display: inline;
 }
 
+input[type="checkbox"] {
+    font-size: small;
+}
+
 @media screen and (min-width: 768px) {
     #pop_up_base {
-        width: 40%;
+        min-width: 40%;
         align-self: center;
     }
 }
