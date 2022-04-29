@@ -150,10 +150,18 @@ router.post("/result", (req, res) => {
 }); */
 // JUST TESTING: END
 
+// 404 - Page not found
 router.get('/*', (req, res) => {
     res.status(404).send(`
-    <p>404</p>
-    <p>This does not exists</p>
+    <html>
+        <head>
+            <link rel="stylesheet" href="./style.css">
+        </head>
+        <body>
+            <p>404</p>
+            <p>This does not exist</p>
+        </body>
+    </html>
     `)});
 
 module.exports = router;
