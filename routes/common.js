@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-
+const databaseConnect = require('../middleware/connection').databaseConnect;
 
 // This route is just for testing and will be removed
-router.get("/db", async (req, res) => {
+/* router.get("/db", async (req, res) => {
     const { Pool } = require('pg');
     const pool = ( () => {
         if (process.env.NODE_ENV !== 'production') {
@@ -30,28 +30,11 @@ router.get("/db", async (req, res) => {
         console.error(err);
         res.json({ error: err });
     }
-});
-
-
+}); */
 
 router.get("/new", async (req, res) => {
-    const { Pool } = require('pg');
-    const pool = ( () => {
-        if (process.env.NODE_ENV !== 'production') {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: false
-            });
-        } else {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: {
-                    rejectUnauthorized: false
-                }
-            });
-        }
-    })();
     try {
+        const pool = await databaseConnect()
         const client = await pool.connect();
         const result = await client.query(`
         select activity_id, title, description, area, location, date_start AS dateStart, date_end AS dateEnd, date_created AS dateCreated, category, user_name AS createdBy FROM activity
@@ -63,10 +46,7 @@ router.get("/new", async (req, res) => {
         limit 20
         `);
         const results = { 'results': (result) ? result.rows : null};
-        //res.json( results );
-        //res.status(200)
-        res.results = results       // ???
-        console.log(res.results)    // ???
+        res.json( results );
         client.release();
     } catch (err) {
         console.error(err);
@@ -75,23 +55,8 @@ router.get("/new", async (req, res) => {
 });
 
 router.get("/popular", async (req, res) => {
-    const { Pool } = require('pg');
-    const pool = ( () => {
-        if (process.env.NODE_ENV !== 'production') {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: false
-            });
-        } else {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: {
-                    rejectUnauthorized: false
-                }
-            });
-        }
-    })();
     try {
+        const pool = await databaseConnect()
         const client = await pool.connect();
         const result = await client.query(`
         select description, count(*) as done from activity
@@ -114,23 +79,8 @@ router.get("/popular", async (req, res) => {
 });
 
 router.get("/upcoming", async (req, res) => {
-    const { Pool } = require('pg');
-    const pool = ( () => {
-        if (process.env.NODE_ENV !== 'production') {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: false
-            });
-        } else {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: {
-                    rejectUnauthorized: false
-                }
-            });
-        }
-    })();
     try {
+        const pool = await databaseConnect()
         const client = await pool.connect();
         const result = await client.query(`
         select * from activity
@@ -153,23 +103,8 @@ router.get("/upcoming", async (req, res) => {
 });
 
 router.get("/past", async (req, res) => {
-    const { Pool } = require('pg');
-    const pool = ( () => {
-        if (process.env.NODE_ENV !== 'production') {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: false
-            });
-        } else {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: {
-                    rejectUnauthorized: false
-                }
-            });
-        }
-    })();
     try {
+        const pool = await databaseConnect()
         const client = await pool.connect();
         const result = await client.query(`
         select * from activity
@@ -190,9 +125,8 @@ router.get("/past", async (req, res) => {
     }
 });
 
-
 // JUST TESTING: START
-router.get("/banana", (req, res) => {
+/* router.get("/banana", (req, res) => {
     res.send(`
     <h1>Fruit?</h1>
     <form action="/result" method="POST">
@@ -213,7 +147,7 @@ router.post("/result", (req, res) => {
         `); 
     }
 
-});
+}); */
 // JUST TESTING: END
 
 router.get('/*', (req, res) => {

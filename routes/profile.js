@@ -1,28 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const databaseConnect = require('../middleware/connection').databaseConnect;
 
 router.get('/', (req, res) => {
     res.send("No profile things yet");
 });
 
 router.get("/todo", async (req, res) => {
-    const { Pool } = require('pg');
-    const pool = ( () => {
-        if (process.env.NODE_ENV !== 'production') {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: false
-            });
-        } else {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: {
-                    rejectUnauthorized: false
-                }
-            });
-        }
-    })();
     try {
+        const pool = await databaseConnect()
         const client = await pool.connect();
         const result = await client.query(`
         select * from activity
