@@ -8,7 +8,13 @@ if (screenWidth >= 1200){
     characterAmount = screenWidth*0.063
 }
 
-
+// Fetch the data from DB
+async function dataRequest(){
+    const response = await fetch("/new")
+    const data = await response.json()
+    //console.log(data)   // Just for testing
+} 
+//dataRequest()     // This function fetches the JSON data from the database
 
 function previewBoxesMain() {
     let displayedText = "";
