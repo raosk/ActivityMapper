@@ -38,8 +38,7 @@ body {
 
 .navbar {
     padding: 7px 10px;
-    display: flex;/* 
-    width: 100%; */
+    display: flex;
     background-color: #4A4A4A;
     align-items: center;
     padding-top: 10px;
@@ -48,8 +47,7 @@ body {
 
 .navbar2 {
     padding: 5px 5px;
-    display: flex;/* 
-    width: 100%; */
+    display: flex;
     background-color: #ffffff;
     align-items: center;
     width: 100%;
@@ -314,10 +312,18 @@ hr{
 }
 
 /* Pop-up Base and Pop-ups' buttons 
-basics, styling still needed*/
+basics*/
+#pop_up_target {
+    align-self: center;
+}
+
 #pop_up_base {
     position: fixed;
-    display: grid;
+    display: inline-block;/*
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    display: grid;*/
     align-items: center;
     align-self: center;
     text-align: left;
@@ -325,12 +331,12 @@ basics, styling still needed*/
     background-color: var(--white-color);
     border: 1px var(--white-color);
     border-radius: 25px;
-    margin-left: 5%;
     z-index: 22;
+    min-width: auto;
     max-height: 80%;
     max-width: 90%;
     overflow-x: hidden;
-    overflow: hidden;
+    overflow-y: auto;
     top: 7%;
     justify-content: center;
     margin-left: 5%;
@@ -400,19 +406,24 @@ basics, styling still needed*/
     background-color: black;
     opacity: 50%;
     display: none;
-    z-index: 9;
+    z-index: 19;
 }
 
 #pop_up_header {
     background-color: var(--primary-color);
     position: relative;
-    display: inline-block;
+    display: flex;/*
+    display: inline-block;*/
     padding-bottom: 10px;
     border-radius: 25px 25px 0px 0px;
     width: 100%;
 } 
 
-#pop_up_footer {
+#pop_up_header h2 {
+    font-size: 26;
+}
+
+#pop_up_footer, #in_form_footer {
     margin-top: 5px;
     border-top-style: solid;
     border-color: var(--black-color);
@@ -420,8 +431,61 @@ basics, styling still needed*/
     width: 100%;
 }
 
+#profile_img {
+    max-width: 30px;
+    display: flex;
+}
+
+#bg_img {
+    max-width: 40%;
+    display: inline;
+    align-self: center;
+}
+
+#pop_up_settings_base {
+    display: flex;
+    flex-direction: column;
+}
+
+#title_field, #desc_field {
+    width: 80%;
+}
+
+#desc_field {
+    min-height: 100px;
+}
+
+#price_field {
+    width: 45px;
+}
+
+#pop_up_settings_base h3 {
+    display: inline;
+}
+
+#pop_up_create_base {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+
+input[type="checkbox"] {
+    font-size: small;
+}
+
+label {
+    font-size: small;
+}
+
+#field_text {
+    font-size: smaller;
+    display: inline;
+}
+
 @media screen and (min-width: 768px) {
     #pop_up_base {
+        max-width: 60%;
         align-self: center;
     }
 }

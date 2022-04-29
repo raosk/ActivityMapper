@@ -90,7 +90,7 @@ function searchPopUp() {
         </div>
               
             
-        </div>
+    </div>
     `
     document.getElementById("pop_up_footer").innerHTML = `
     <div class="buttons_bottom">
@@ -116,20 +116,22 @@ function loginPopUp() {
     node.appendChild(textnode);
     document.getElementById("pop_up_header").appendChild(node);
     document.getElementById("pop_up_content_target").innerHTML = `
-    <div class="pop_up_login_base">
+    <form class="pop_up_login_base">
         <div id="login_field">
             <p class="field_text">username</p>
-            <input type="text" id="username" placeholder="username">
+            <input type="text" id="username" placeholder="username" required>
             <p class="field_text">password</p>
-            <input type="password" id="password" placeholder="password">
+            <input type="password" id="password" placeholder="password" required>
             </div>
-              
+            <div id="in_form_footer"></div>
             
-        </div>
+        </form>
     `
-    document.getElementById("pop_up_footer").innerHTML = `
+    document.getElementById("in_form_footer").innerHTML = `
         <button id="text_button" onclick=" registerPopUp();">Not a member yet?</button> 
         <button id="actual_button" onclick="">Login</button>  `
+    const oldFooter = document.getElementById("pop_up_footer");
+    oldFooter.remove();
 }
 
 function registerPopUp() {
@@ -139,20 +141,137 @@ function registerPopUp() {
     node.appendChild(textnode);
     document.getElementById("pop_up_header").appendChild(node);
     document.getElementById("pop_up_content_target").innerHTML = `
-    <div class="pop_up_login_base">
+    <form class="pop_up_register_base">
         <div id="register_field">
             <p class="field_text">email</p>
-            <input type="email" id="email" placeholder="email@email.com">
+            <input type="email" id="email" placeholder="email@email.com" required>
             <p class="field_text">username</p>
-            <input type="text" id="username" placeholder="username">
+            <input type="text" id="username" placeholder="username" required>
             <p class="field_text">password</p>
-            <input type="password" id="password" placeholder="password">
+            <input type="password" id="password" placeholder="password" required>
             </div>
-        </div>`
-    document.getElementById("pop_up_footer").innerHTML = `
+            <div id="in_form_footer"></div>
+        </form>`
+    document.getElementById("in_form_footer").innerHTML = `
         <button id="text_button" onclick=" loginPopUp();">Already a member??</button> 
-        <button id="actual_button" onclick="">Register</button>    `
+        <input type="submit" id="actual_button" value="Register" onclick=""></input>    `
+    const oldFooter = document.getElementById("pop_up_footer");
+    oldFooter.remove();
 }
+
+function settingsPopUp() {
+    popUpBase();
+    const node = document.createElement("h2");
+    const textnode = document.createTextNode("Settings");
+    node.appendChild(textnode);
+    document.getElementById("pop_up_header").appendChild(node);
+    document.getElementById("pop_up_content_target").innerHTML = `
+    <div class="pop_up_settings_base">
+        <div id="settings_field">
+            <h3 class="user_email">email@email.com</h3>
+        </div>
+        <img id="bg_img" src="images/icons/hiker_hd.png" alt="#"> </img>
+            
+        </div>
+    `
+    document.getElementById("pop_up_footer").innerHTML = `
+        <button id="actual_button" onclick="">Log out</button>  
+        <button id="text_button">Delete Account</button> `
+}
+
+function createPopUp() {
+    popUpBase();
+    const node = document.createElement("h2");
+    const textnode = document.createTextNode("Create New Activity");
+    node.appendChild(textnode);
+    document.getElementById("pop_up_header").appendChild(node);
+    document.getElementById("pop_up_content_target").innerHTML = `
+    <form id="create_field">
+        <div class="pop_up_create_base">
+            <input type="text" id="title_field" placeholder="Title" required>
+            <input type="text" id="desc_field" placeholder="Description" required>
+            <div class="form-group">
+                <label for="price" class="field_text">Price: </label>
+                <input type="number" name="price" id="price_field" placeholder="0" min="0" max="9999">
+            <p class="field_text">€</p>
+            </div>
+            <div id="category_choice_field">
+                <div class="form-group">
+                    <label for="category1" class="field_text">First Category: </label>
+                    <select name="category1" id="category1" required>
+                    <option hidden disabled selected value> -- </option>
+                    <option value="arts">Arts</option>
+                    <option value="crafts">Crafts</option>
+                    <option value="culture">Culture</option>
+                    <option value="food">Food</option>
+                    <option value="learning">Learning</option>
+                    <option value="music">Music</option>
+                    <option value="nature">Nature</option>
+                    <option value="other">Other</option>
+                    <option value="party">Party</option>
+                    <option value="sport">Sport</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                <label for="category2" class="field_text">Second Category*: </label>
+                <select name="category2" id="category2">
+                <option hidden disabled selected value> -- </option>
+                    <option value="arts">Arts</option>
+                    <option value="crafts">Crafts</option>
+                    <option value="culture">Culture</option>
+                    <option value="food">Food</option>
+                    <option value="learning">Learning</option>
+                    <option value="music">Music</option>
+                    <option value="nature">Nature</option>
+                    <option value="other">Other</option>
+                    <option value="party">Party</option>
+                    <option value="sport">Sport</option>
+                </select>
+                </div>
+                <div class="form-group">
+                <label for="category3" class="field_text">Third Category*: </label>
+                <select name="category3" id="category3">
+                <option hidden disabled selected value> -- </option>
+                    <option value="arts">Arts</option>
+                    <option value="crafts">Crafts</option>
+                    <option value="culture">Culture</option>
+                    <option value="food">Food</option>
+                    <option value="learning">Learning</option>
+                    <option value="music">Music</option>
+                    <option value="nature">Nature</option>
+                    <option value="other">Other</option>
+                    <option value="party">Party</option>
+                    <option value="sport">Sport</option>
+                </select>
+                <p>* not required</p>
+                </div>
+            </div>
+            </div>
+            <div class="form-group">
+                <label for="start_date" class="field_text">Date: </label>
+                <input type="date" name="start_date" id="start_date" required>
+                <p class="field_text"> - </p>
+                <input type="date" name="end_date" id="end_date" required>
+            </div>
+            <div class="form-group">
+                <label for="area" class="field_text">Area: </label>
+                <input type="text" id="area" name="area" required>
+            </div>
+            <div class="form-group">
+                <label for="location" class="field_text">Location: </label>
+                <input type="text" id="location" name="location" required>
+            </div>
+        </div>
+        <div id="in_form_footer"></div>    
+    </form>`
+    document.getElementById("in_form_footer").innerHTML = `
+        <input type="submit" id="actual_button" onclick="" value="Create"></input> `
+        const oldFooter = document.getElementById("pop_up_footer");
+        oldFooter.remove();
+
+    
+}
+/* ^^^currently testing out forms, required inputs and submit actions*/
 
 
 function closePopUp() {
@@ -161,6 +280,7 @@ function closePopUp() {
     popUpBoard.style.display = 'none';
     overlay.style.display = 'none';
     document.body.style.overflow = 'auto';
+    chosenCats = [];
 }
 
 function activityPopup(n) {

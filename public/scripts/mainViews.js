@@ -9,7 +9,7 @@ function viewBase() {
             <li onclick="isLoggedIn();"><a href="#">Profile</a></li>
         </ul>
         <ul class="mobile-list">
-            <li><i class="fa-solid fa-user" onclick="loginPopUp()"></i></li>
+            <li><i class="fa-solid fa-user" onclick="isLoggedIn()"></i></li>
             <li><i class="fa-solid fa-magnifying-glass" onclick="searchPopUp()"></i></li>
           </ul>
         </div>
@@ -18,15 +18,15 @@ function viewBase() {
 <ul class="desktop-activity-list">
     <li onclick="searchPopUp();"><a href="#">To-do</a></li>
     <li onclick="isLoggedIn();"><a href="#">Done</a></li>
-    <li onclick="searchPopUp();"><a href="#">Create</a></li>
-    <li onclick="isLoggedIn();"><a href="#">Settings</a></li>
+    <li onclick="createPopUp();"><a href="#">Create</a></li>
+    <li onclick="settingsPopUp();"><a href="#">Settings</a></li>
 </ul>
 
 <ul class="mobile-activity-list">
     <li onclick="searchPopUp();"><a href="#">To-do</a></li>
     <li onclick="isLoggedIn();"><a href="#">Done</a></li>
-    <li onclick="searchPopUp();"><a href="#">Create</a></li>
-    <li onclick="isLoggedIn();"><a href="#">Settings</a></li>
+    <li onclick="createPopUp();"><a href="#">Create</a></li>
+    <li onclick="settingsPopUp();"><a href="#">Settings</a></li>
   </ul>
     </div>
     </div>
@@ -49,6 +49,7 @@ function mainView() {
 
 function resultsView() {
     viewBase();
+    closePopUp();
     document.getElementById("titleBarTarget").innerHTML = `
     <div id="previewsTarget">
     
