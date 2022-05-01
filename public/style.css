@@ -41,16 +41,16 @@ body {
     display: flex;
     background-color: #4A4A4A;
     align-items: center;
-    padding-top: 10px;
-    width: 100%;
+    padding-top: 10px;/* 
+    width: 100%; */
 }
 
 .navbar2 {
     padding: 5px 5px;
     display: flex;
     background-color: #ffffff;
-    align-items: center;
-    width: 100%;
+    align-items: center;/* 
+    width: 100%; */
 }
 
 .navbar a {
