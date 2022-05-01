@@ -1,5 +1,10 @@
 let data;   // This will hold either the real data from the DB or our dummy data
 let useDummyData = true;
+if (useDummyData === true) {console.log("You are currently using the dummy data. You can change 'useDummyData' to 'false' to use the DB instead.")}
+else {console.log("You are currently set to use the DB. You can change 'useDummyData' to 'true' to use the dummy data instead.")}
+
+console.log("DUMMY DATA:");     // Just for testing
+console.log(dummyData);         // Just for testing
 
 //find out user's screen width:
 let screenWidth = window.innerWidth;
@@ -20,19 +25,14 @@ async function dataRequest(){
         const json = await response.json()
         //console.log(json.results)   // Just for testing
         data = json.results
-        console.log("FUNCTION DATA:");      // Just for testing
+        console.log("REAL DATA:");      // Just for testing
         console.log(data);              // Just for testing
     }
     previewBoxes()
 } 
 
-console.log("DUMMY DATA:");     // Just for testing
-console.log(dummyData);         // Just for testing
-
 function previewBoxesMain() {
     dataRequest()
-    console.log("REAL DATA:");      // Just for testing
-    console.log(data);              // Just for testing
     previewBoxes()
 }
 
