@@ -2,42 +2,12 @@ const express = require('express');
 const router = express.Router();
 const databaseConnect = require('../middleware/connection').databaseConnect;
 
-// This route is just for testing and will be removed
-/* router.get("/db", async (req, res) => {
-    const { Pool } = require('pg');
-    const pool = ( () => {
-        if (process.env.NODE_ENV !== 'production') {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: false
-            });
-        } else {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: {
-                    rejectUnauthorized: false
-                }
-            });
-        }
-    })();
-    try {
-        const client = await pool.connect();
-        const result = await client.query('SELECT id, name, email FROM profile;');
-        const results = { 'results': (result) ? result.rows : null};
-        res.json( results );
-        client.release();
-    } catch (err) {
-        console.error(err);
-        res.json({ error: err });
-    }
-}); */
-
 router.get("/new", async (req, res) => {
     try {
         const pool = await databaseConnect()
         const client = await pool.connect();
         const result = await client.query(`
-        select activity_id, title, description, area, location, date_start AS dateStart, date_end AS dateEnd, date_created AS dateCreated, category, user_name AS createdBy FROM activity
+        select activity_id, title, description, area, location, TO_CHAR(date_start, 'DD.MM.YYYY') date_start, TO_CHAR(date_end, 'DD.MM.YYYY') date_end, TO_CHAR(date_created, 'DD.MM.YYYY') date_created, ARRAY[category] AS category, user_name AS created_by FROM activity
         inner join feed on activity.activity_id=feed.feed_id
         inner join users on feed.user_user_id=user_id
         inner join activity_has_category on activity.activity_id=activity_has_category.activity_activity_id
