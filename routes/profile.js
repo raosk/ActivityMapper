@@ -2,16 +2,12 @@ const express = require('express');
 const router = express.Router();
 const databaseConnect = require('../middleware/connection').databaseConnect;
 
-router.get('/', (req, res) => {
-    res.send("No profile things yet");
-});
-
 router.get("/todo", async (req, res) => {
     try {
         const pool = await databaseConnect()
         const client = await pool.connect();
         const result = await client.query(`
-        select * from activity
+        select activity_id, title, description, area, location, TO_CHAR(date_start, 'DD.MM.YYYY') date_start, TO_CHAR(date_end, 'DD.MM.YYYY') date_end, TO_CHAR(date_created, 'DD.MM.YYYY') date_created, ARRAY[category] AS category, user_name AS created_by FROM activity
         inner join feed on activity.activity_id=feed."activity_activityId"
         inner join users on feed.user_user_id=users.user_id
         inner join activity_has_category on activity.activity_id=activity_activity_id
@@ -28,26 +24,11 @@ router.get("/todo", async (req, res) => {
 });
 
 router.get("/done", async (req, res) => {
-    const { Pool } = require('pg');
-    const pool = ( () => {
-        if (process.env.NODE_ENV !== 'production') {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: false
-            });
-        } else {
-            return new Pool({
-                connectionString: process.env.DATABASE_URL,
-                ssl: {
-                    rejectUnauthorized: false
-                }
-            });
-        }
-    })();
     try {
+        const pool = await databaseConnect()
         const client = await pool.connect();
         const result = await client.query(`
-        select * from activity
+        select activity_id, title, description, area, location, TO_CHAR(date_start, 'DD.MM.YYYY') date_start, TO_CHAR(date_end, 'DD.MM.YYYY') date_end, TO_CHAR(date_created, 'DD.MM.YYYY') date_created, ARRAY[category] AS category, user_name AS created_by FROM activity
         inner join feed on activity.activity_id=feed."activity_activityId"
         inner join users on feed.user_user_id=users.user_id
         inner join activity_has_category on activity.activity_id=activity_activity_id

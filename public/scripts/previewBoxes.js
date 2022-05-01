@@ -2,7 +2,6 @@ let data;   // This will hold either the real data from the DB or our dummy data
 let useDummyData = true;
 if (useDummyData === true) {console.log("You are currently using the dummy data. You can change 'useDummyData' to 'false' to use the DB instead.")}
 else {console.log("You are currently set to use the DB. You can change 'useDummyData' to 'true' to use the dummy data instead.")}
-
 console.log("DUMMY DATA:");     // Just for testing
 console.log(dummyData);         // Just for testing
 
@@ -17,23 +16,22 @@ if (screenWidth >= 1200){
 }
 
 // Fetch the data from DB
-async function dataRequest(){
+async function dataRequest(path){
     if (useDummyData == true) {
         data = dummyData;
     } else {
-        const response = await fetch("/new")
+        const response = await fetch(path)
         const json = await response.json()
-        //console.log(json.results)   // Just for testing
         data = json.results
         console.log("REAL DATA:");      // Just for testing
         console.log(data);              // Just for testing
     }
-    previewBoxes()
 } 
 
-function previewBoxesMain() {
-    dataRequest()
-    previewBoxes()
+async function previewBoxesMain(path) {
+    await dataRequest(path)
+    await previewBoxes()
+    checkDate();
 }
 
 function previewBoxes() {
@@ -79,7 +77,7 @@ function previewBoxes() {
         
         
     }
-    checkDate();
+    //checkDate();
 }
 
 function checkDate() {

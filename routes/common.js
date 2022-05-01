@@ -53,7 +53,7 @@ router.get("/upcoming", async (req, res) => {
         const pool = await databaseConnect()
         const client = await pool.connect();
         const result = await client.query(`
-        select * from activity
+        select activity_id, title, description, area, location, TO_CHAR(date_start, 'DD.MM.YYYY') date_start, TO_CHAR(date_end, 'DD.MM.YYYY') date_end, TO_CHAR(date_created, 'DD.MM.YYYY') date_created, ARRAY[category] AS category, user_name AS created_by FROM activity
         inner join feed on activity.activity_id=feed.feed_id
         inner join users on feed.user_user_id=user_id
         inner join activity_has_category on activity.activity_id=activity_has_category.activity_activity_id
@@ -77,7 +77,7 @@ router.get("/past", async (req, res) => {
         const pool = await databaseConnect()
         const client = await pool.connect();
         const result = await client.query(`
-        select * from activity
+        select activity_id, title, description, area, location, TO_CHAR(date_start, 'DD.MM.YYYY') date_start, TO_CHAR(date_end, 'DD.MM.YYYY') date_end, TO_CHAR(date_created, 'DD.MM.YYYY') date_created, ARRAY[category] AS category, user_name AS created_by FROM activity
         inner join feed on activity.activity_id=feed.feed_id
         inner join users on feed.user_user_id=user_id
         inner join activity_has_category on activity.activity_id=activity_has_category.activity_activity_id
