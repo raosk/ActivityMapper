@@ -9,7 +9,7 @@ let dummyData = [
         "date_end": "28.05.2022",
         "date_created": "04.04.2022",
         "category": ["nature", "sport"],
-        "created_by": null
+        "created_by": "Paavo99"
     },
     {
         "activity_id": 2,
@@ -21,7 +21,7 @@ let dummyData = [
         "date_end": "06.04.2022",
         "date_created": "04.04.2022",
         "category": ["culture", "food"],
-        "created_by": null
+        "created_by": "Make403"
     },
     {
         "activity_id": 3,
@@ -33,7 +33,7 @@ let dummyData = [
         "date_end": "18.06.2022",
         "date_created": "04.04.2022",
         "category": ["arts", "party"],
-        "created_by": null
+        "created_by": "joujoumään007"
     },
     {
         "activity_id": 4,
@@ -45,7 +45,7 @@ let dummyData = [
         "date_end": "23.06.2022",
         "date_created": "04.04.2022",
         "category": ["arts", "music"],
-        "created_by": null
+        "created_by": "PirkkoJ"
     },
     {
         "activity_id": 5,
@@ -57,7 +57,7 @@ let dummyData = [
         "date_end": "13.04.2022",
         "date_created": "04.04.2022",
         "category": ["learning", "party"],
-        "created_by": "John"
+        "created_by": "The Intellect group"
     },
     {
         "activity_id": 6,
@@ -69,7 +69,7 @@ let dummyData = [
         "date_end": "18.05.2022",
         "date_created": "01.05.2022",
         "category": ["music"],
-        "created_by": "John"
+        "created_by": "Daevsaöb"
     },
     {
         "activity_id": 7,

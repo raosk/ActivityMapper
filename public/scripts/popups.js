@@ -61,12 +61,6 @@ function popUpBase() {
     document.body.style.overflow = 'hidden';
 }
 
-function detailsPopUp() {
-    popUpBase()
-    //detail view stuff here
-}
-
-
 function searchPopUp() {
     popUpBase()
     const node = document.createElement("h2");
@@ -281,6 +275,36 @@ function closePopUp() {
     overlay.style.display = 'none';
     document.body.style.overflow = 'auto';
     chosenCats = [];
+}
+
+function activityPopup(n) {
+    /* console.log(n)  // Just for testing */
+    popUpBase()
+    const node = document.createElement("h2");
+    const textnode = document.createTextNode(data[n].title);
+    node.appendChild(textnode);
+    document.getElementById("pop_up_header").appendChild(node);
+
+    document.getElementById("pop_up_content_target").innerHTML = `
+    <div class="AP_base">
+        <div id="AP_contents_box">
+            <p class="AP_created_by">Suggested by ${data[n].created_by}</p>
+            <div class="AP_description_box">
+                <p class="AP_description">${data[n].description}</p>
+            </div>
+        <div class="AP_details_box">
+            <div class="AP_category_box">
+                <p class="AP_category">${data[n].category[0]}</p>
+            </div>
+            <div class="AP_place_and_time_box">
+                <p class="AP_location">${data[n].area}, ${data[n].location}</p>
+                <p class="AP_date">${data[n].date_start} - ${data[n].date_end}</p>
+            </div>
+        </div>
+    `
+    document.getElementById("pop_up_footer").innerHTML = `
+        <button id="actual_button" onclick="">To-Do</button>  
+        <button id="actual_button" onclick="">Done</button>`
 }
 
 /* function activityPopup(n) {

@@ -491,6 +491,37 @@ label {
 }
 
 /* Activity pop-ups */
+.AP_base {
+    margin: 0 auto;
+}
+
+.AP_created_by {
+    color: rgb(128, 128, 128);
+}
+
+.AP_description_box {
+    margin: 20px 0;
+}
+
+.AP_category_box {
+/*     margin-top: 5px;
+    margin-bottom: 8px; */
+    margin: 0 auto;
+    background-color: #c6aef3;
+    border-radius: 20px;
+    width: fit-content;
+    height: fit-content;
+    padding: 3px 10px;
+}
+
+.AP_details_box {
+    background-color: #e2d0f3;
+    margin: auto;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 15px;
+    width: 70%;
+}
 
 /* Search pop-ups */
 
