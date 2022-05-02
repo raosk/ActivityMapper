@@ -76,7 +76,7 @@ function searchPopUp() {
                 <p class="field_text">end date</p>
                 <input type="date" name="end date" id="end_date">
                 <p class="field_text">price</p>
-                <input type="number" name="price" id="price">
+                <input type="number" name="price" id="price" min="0" max="9999">
             </div>
             <p class="field_text">free word search</p>
             <input type="text" id="word_search">
@@ -169,8 +169,11 @@ function settingsPopUp() {
         </div>
     `
     document.getElementById("pop_up_footer").innerHTML = `
-        <button id="actual_button" onclick="">Log out</button>  
-        <button id="text_button">Delete Account</button> `
+        <div class="buttons_bottom">
+            <button id="actual_button" onclick="">Log out</button>  
+            <button id="text_button">Delete Account</button>
+        </div>
+         `
 }
 
 function createPopUp() {
