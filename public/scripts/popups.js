@@ -175,8 +175,11 @@ function settingsPopUp() {
         </div>
     `
     document.getElementById("pop_up_footer").innerHTML = `
-        <button id="actual_button" onclick="">Log out</button>  
-        <button id="text_button">Delete Account</button> `
+        <div class="buttons_bottom">
+            <button id="actual_button" onclick="">Log out</button>  
+            <button id="text_button">Delete Account</button>
+        </div>
+         `
 }
 
 function createPopUp() {
