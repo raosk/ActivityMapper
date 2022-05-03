@@ -13,6 +13,7 @@ function viewBase() {
         <li><i class="fa-solid fa-globe" onclick="mainView()"></i></li>
         <li><i class="fa-solid fa-user" onclick="isLoggedIn()"></i></li>
         </ul>
+        </div>
     </div>
 
     <div class="navbar2">
