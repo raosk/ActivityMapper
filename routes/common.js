@@ -128,8 +128,25 @@ router.get('/*', (req, res) => {
             <link rel="stylesheet" href="./style.css">
         </head>
         <body>
-            <p>404</p>
-            <p>This does not exist</p>
+        
+            <script src="scripts/mainViews.js"></script>
+            <script src="scripts/previewBoxes.js"></script>
+            <script src="scripts/popups.js"></script>
+
+            <div id="mainTarget"></div>
+            <div id="pop_up_target"></div>
+            <div class="err_box">
+                <p class="err_num">404</p>
+                <p>Page does not exist</p>
+                <img src="images/icons/poo_climber.png" class="poo_man">
+                <p class="err_text">Are you lost, weary traveller?</p>
+                <p><a href="(link to start)">Back to main page</a></p>
+            </div>
+            
+
+            <script>
+                mainView();     // This will call in main view
+            </script>
         </body>
     </html>
     `)});
