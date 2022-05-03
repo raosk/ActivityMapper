@@ -1,5 +1,5 @@
 let data;   // This will hold either the real data from the DB or our dummy data
-let useDummyData = true;
+let useDummyData = false;
 if (useDummyData === true) {console.log("You are currently using the dummy data. You can change 'useDummyData' to 'false' to use the DB instead.")}
 else {console.log("You are currently set to use the DB. You can change 'useDummyData' to 'true' to use the dummy data instead.")}
 console.log("DUMMY DATA:");     // Just for testing

@@ -1,8 +1,8 @@
 /* Root for color variables, not final */
 :root {
     --primary-color: #C5A3E8;
-    --secondary-color: #f7f1a2;
-    --thirdary-color: #929292;
+    --secondary-color: #bbbbbb;
+    --thirdary-color: #6d6d6d;
     --black-color: #343642;
     --white-color: white;
 }
@@ -199,6 +199,8 @@ body {
 }
 #login_field {
     text-align: left;
+    margin-top: 5%;
+    margin-bottom: 30%;
 }
 #search_field {
     padding-right: 2rem;
@@ -324,7 +326,7 @@ basics*/
     position: fixed;
     display: inline-block;
     top: 50%;
-    left: 30%;
+    left: 35%;
     transform: translate(-55%);/*
     display: grid;*/
     align-items: center;
@@ -359,14 +361,15 @@ basics*/
 }
 
 
-#pop_up_base2{
+.pop_up_base2{/*
     display: flex;
     justify-content: center;
     justify-self: center;
     align-self: center;
     align-content: center;
     align-items: center;
-    width: 1000px;
+    width: 1000px;*/
+    height: 100%;
 }
 
 #pop_up_content_target {
@@ -440,11 +443,22 @@ basics*/
 }
 
 #pop_up_footer, #in_form_footer {
-    margin-top: 5px;
+    margin-top: 15px;
     border-top-style: solid;
     border-color: var(--black-color);
     margin-left: 0;
+    align-items: center;
     width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    background-color: var(--secondary-color);/**/
+    border-radius: 0px 0px 25px 25px;
+}
+
+@media screen and (max-width: 465px) {
+    #pop_up_footer, #in_form_footer {
+        margin-top: 25%;
+    }
 }
 
 #profile_img {
@@ -461,6 +475,7 @@ basics*/
 #pop_up_settings_base {
     display: flex;
     flex-direction: column;
+    margin-bottom: 30%;
 }
 
 #title_field, #desc_field {

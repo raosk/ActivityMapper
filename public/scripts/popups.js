@@ -110,22 +110,21 @@ function loginPopUp() {
     node.appendChild(textnode);
     document.getElementById("pop_up_header").appendChild(node);
     document.getElementById("pop_up_content_target").innerHTML = `
-    <form class="pop_up_login_base">
-        <div id="login_field">
+    <div class="pop_up_login_base">
+        <form id="login_field">
             <p class="field_text">username</p>
             <input type="text" id="username" placeholder="username" required>
             <p class="field_text">password</p>
             <input type="password" id="password" placeholder="password" required>
-            </div>
-            <div id="in_form_footer"></div>
-            
         </form>
+            
+    </div>
     `
-    document.getElementById("in_form_footer").innerHTML = `
+    document.getElementById("pop_up_footer").innerHTML = `
+    <div class="buttons_bottom">
         <button id="text_button" onclick=" registerPopUp();">Not a member yet?</button> 
-        <button id="actual_button" onclick="">Login</button>  `
-    const oldFooter = document.getElementById("pop_up_footer");
-    oldFooter.remove();
+        <button id="actual_button" onclick="" form="login_field">Login</button>  
+    </div>`
 }
 
 function registerPopUp() {
@@ -135,21 +134,22 @@ function registerPopUp() {
     node.appendChild(textnode);
     document.getElementById("pop_up_header").appendChild(node);
     document.getElementById("pop_up_content_target").innerHTML = `
-    <form class="pop_up_register_base">
-        <div id="register_field">
+    <div class="pop_up_register_base">
+        <form id="register_field">
             <p class="field_text">email</p>
             <input type="email" id="email" placeholder="email@email.com" required>
             <p class="field_text">username</p>
             <input type="text" id="username" placeholder="username" required>
             <p class="field_text">password</p>
             <input type="password" id="password" placeholder="password" required>
-            </div>
-            <div id="in_form_footer"></div>
-        </form>`
-    document.getElementById("in_form_footer").innerHTML = `
+        </form>        
+    </div>`
+    document.getElementById("pop_up_footer").innerHTML = `
+    <div class="buttons_bottom">
         <button id="text_button" onclick=" loginPopUp();">Already a member??</button> 
-        <input type="submit" id="actual_button" value="Register" onclick=""></input>    `
-    const oldFooter = document.getElementById("pop_up_footer");
+        <input type="submit" id="actual_button" value="Register" onclick="" form="register_field"></input>    
+    </div>`
+    const oldFooter = document.getElementById("");
     oldFooter.remove();
 }
 
@@ -194,7 +194,7 @@ function createPopUp() {
             </div>
             <div id="category_choice_field">
                 <div class="form-group">
-                    <label for="category1" class="field_text">First Category: </label>
+                    <label for="category1" class="field_text">Category: </label>
                     <select name="category1" id="category1" required>
                     <option hidden disabled selected value> -- </option>
                     <option value="arts">Arts</option>
@@ -208,39 +208,6 @@ function createPopUp() {
                     <option value="party">Party</option>
                     <option value="sport">Sport</option>
                     </select>
-                </div>
-                <div class="form-group">
-                <label for="category2" class="field_text">Second Category*: </label>
-                <select name="category2" id="category2">
-                <option hidden disabled selected value> -- </option>
-                    <option value="arts">Arts</option>
-                    <option value="crafts">Crafts</option>
-                    <option value="culture">Culture</option>
-                    <option value="food">Food</option>
-                    <option value="learning">Learning</option>
-                    <option value="music">Music</option>
-                    <option value="nature">Nature</option>
-                    <option value="other">Other</option>
-                    <option value="party">Party</option>
-                    <option value="sport">Sport</option>
-                </select>
-                </div>
-                <div class="form-group">
-                <label for="category3" class="field_text">Third Category*: </label>
-                <select name="category3" id="category3">
-                <option hidden disabled selected value> -- </option>
-                    <option value="arts">Arts</option>
-                    <option value="crafts">Crafts</option>
-                    <option value="culture">Culture</option>
-                    <option value="food">Food</option>
-                    <option value="learning">Learning</option>
-                    <option value="music">Music</option>
-                    <option value="nature">Nature</option>
-                    <option value="other">Other</option>
-                    <option value="party">Party</option>
-                    <option value="sport">Sport</option>
-                </select>
-                <p>* not required</p>
                 </div>
             </div>
             </div>
@@ -258,17 +225,15 @@ function createPopUp() {
                 <label for="location" class="field_text">Location: </label>
                 <input type="text" id="location" name="location" required>
             </div>
-        </div>
-        <div id="in_form_footer"></div>    
+        </div> 
     </form>`
-    document.getElementById("in_form_footer").innerHTML = `
-        <input type="submit" id="actual_button" onclick="" value="Create"></input> `
-        const oldFooter = document.getElementById("pop_up_footer");
-        oldFooter.remove();
+    document.getElementById("pop_up_footer").innerHTML = `
+    <div class="buttons_bottom">
+        <input type="submit" id="actual_button" onclick="" value="Create" form="create_field"></input> 
+    </div>`
 
     
 }
-/* ^^^currently testing out forms, required inputs and submit actions*/
 
 
 function closePopUp() {
@@ -277,7 +242,6 @@ function closePopUp() {
     popUpBoard.style.display = 'none';
     overlay.style.display = 'none';
     document.body.style.overflow = 'auto';
-    chosenCats = [];
 }
 
 function activityPopup(n) {
@@ -306,8 +270,10 @@ function activityPopup(n) {
         </div>
     `
     document.getElementById("pop_up_footer").innerHTML = `
+    <div class="buttons_bottom">
         <button id="actual_button" onclick="">To-Do</button>  
-        <button id="actual_button" onclick="">Done</button>`
+        <button id="actual_button" onclick="">Done</button>
+    </div>`
 }
 
 /* function activityPopup(n) {
