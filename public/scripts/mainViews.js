@@ -4,8 +4,9 @@ function viewBase() {
     <div class="navbar">
         <a href="#"><img class="logo-img" img src="images/icons/thick_logo-modified.png" alt="#" width="50px" height="50px"></a>
         <ul class="desktop-list">
-            <li onclick="searchPopUp();"><a href="#">Search</a></li>
-            <li onclick="isLoggedIn();"><a href="#">Profile</a></li>
+        <li><i class="fa-solid fa-user" onclick="isLoggedIn()"></i></li>
+        <li><i class="fa-solid fa-globe" onclick="isLoggedIn()"></i></li>
+        <li><i class="fa-solid fa-magnifying-glass" onclick="searchPopUp()"></i></li>
         </ul>
         <ul class="mobile-list">
             <li><i class="fa-solid fa-user" onclick="isLoggedIn()"></i></li>
