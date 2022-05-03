@@ -206,6 +206,10 @@ body {
         height: 20px;
     }
 
+    .navbar2 ul li {
+        padding: 25px;
+    }
+
     .mobile-list {
         display: block;
         color: whitesmoke;
