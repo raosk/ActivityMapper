@@ -95,7 +95,15 @@ body {
 
 .navbar2 ul li {
     display: inline-block;
-    margin: 5px 15px;
+    padding: 1px;
+    font-size: 10px;
+}
+
+.navbar2 ul i {
+    display: inline-block;
+    padding-top: 8px;
+    font-size: 28px;
+
 }
 
 .mobile-list {

@@ -15,6 +15,10 @@ function viewBase() {
 
     <div class="navbar2">
     <ul class="desktop-activity-list">
+        <i class="fa-solid fa-table-list"onclick="todoView();"></i>
+        <i class="fa-solid fa-check"onclick="doneView();"></i>
+        <i class="fa-solid fa-circle-plus"onclick="createPopUp();"></i>
+        <i class="fa-solid fa-gear"onclick="settingsPopUp();"></i>
         <li onclick="todoView();"><a href="#">To-do</a></li>
         <li onclick="doneView();"><a href="#">Done</a></li>
         <li onclick="createPopUp();"><a href="#">Create</a></li>
