@@ -410,8 +410,16 @@ basics*/
         transform: translate(-50%);
         max-width: 60%;
         min-height: 50%;
+        max-height: 70%;
         align-self: center;
         margin-left: 0%;
+    }
+}
+
+@media screen and (min-width: 1260px) {
+    #pop_up_base {
+        min-height: 20%;
+        max-height: 50%;
     }
 }
 
@@ -424,7 +432,8 @@ basics*/
     align-content: center;
     align-items: center;
     width: 1000px;*/
-    height: 100%;
+    height: initial;
+    overflow: auto;
 }
 
 #pop_up_content_target {
@@ -510,11 +519,6 @@ basics*/
     border-radius: 0px 0px 25px 25px;
 }
 
-@media screen and (max-width: 465px) {
-    #pop_up_footer, #in_form_footer {
-        margin-top: 25%;
-    }
-}
 
 #profile_img {
     max-width: 30px;
