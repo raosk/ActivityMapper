@@ -514,6 +514,7 @@ label {
         align-self: center;
         margin-left: auto;
         padding-bottom: 10px;
+        padding-top: 1rem;
     }
     .activity_preview_box_image_container{
         text-align: left;
