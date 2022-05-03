@@ -10,6 +10,7 @@ function viewBase() {
         </ul>
         <ul class="mobile-list">
             <li><i class="fa-solid fa-user" onclick="isLoggedIn()"></i></li>
+            <li><i class="fa-solid fa-globe" onclick="isLoggedIn()"></i></li>
             <li><i class="fa-solid fa-magnifying-glass" onclick="searchPopUp()"></i></li>
         </ul>
     </div>
