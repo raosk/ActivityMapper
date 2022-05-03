@@ -140,7 +140,7 @@ router.get('/*', (req, res) => {
                 <p>Page does not exist</p>
                 <img src="images/icons/poo_climber.png" class="poo_man">
                 <p class="err_text">Are you lost, weary traveller?</p>
-                <p><a href="(link to start)">Back to main page</a></p>
+                <p><a href="/">Back to main page</a></p>
             </div>
             
 
